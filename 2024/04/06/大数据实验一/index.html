@@ -1,0 +1,294 @@
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.1.1"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1></h1></div><hr><div id="post-content"><h1 id="实验1-1：基于华为云构建大数据实验环境"><a href="#实验1-1：基于华为云构建大数据实验环境" class="headerlink" title="实验1.1：基于华为云构建大数据实验环境"></a>实验1.1：基于华为云构建大数据实验环境</h1><h2 id="一、实验描述"><a href="#一、实验描述" class="headerlink" title="一、实验描述"></a>一、实验描述</h2><p>购买华为云ECS服务器，构建大数据实验环境。</p>
+<h2 id="二、实验目的"><a href="#二、实验目的" class="headerlink" title="二、实验目的"></a>二、实验目的</h2><p>1.了解华为云基础操作；</p>
+<p>2.购买华为云ECS；</p>
+<p>3.掌握华为云服务器操作；</p>
+<h2 id="三、实验步骤"><a href="#三、实验步骤" class="headerlink" title="三、实验步骤"></a>三、实验步骤</h2><h3 id="进入控制台选择弹性云服务器ECS"><a href="#进入控制台选择弹性云服务器ECS" class="headerlink" title="进入控制台选择弹性云服务器ECS"></a>进入控制台选择弹性云服务器ECS</h3><p>开始购买，选择鲲鹏计算系列的买四台</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326184412087.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326184412087.png" alt="image-20240326184412087"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326184417666.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326184417666.png" alt="image-20240326184417666"></p>
+<p>接下来进入网络配置</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326184735393.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326184735393.png" alt="image-20240326184735393"></p>
+<p>接下来高级配置</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326185928214.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326185928214.png" alt="image-20240326185928214"></p>
+<p>同意并购买</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190019772.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190019772.png" alt="image-20240326190019772"></p>
+<h3 id="打开OBS服务创建桶"><a href="#打开OBS服务创建桶" class="headerlink" title="打开OBS服务创建桶"></a>打开OBS服务创建桶</h3><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190210169.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190210169.png" alt="image-20240326190210169"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190331296.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190331296.png" alt="image-20240326190331296"></p>
+<p>复制EndPoint值</p>
+<p>obs.cn-north-4.myhuaweicloud.com</p>
+<p>获取AK&#x2F;SK</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190924961.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190924961.png" alt="image-20240326190924961"></p>
+<p>结果如下</p>
+<table>
+<thead>
+<tr>
+<th>User Name</th>
+<th>Access Key Id</th>
+<th>Secret Access Key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>windnegev</td>
+<td>ZKM5408Z5O5BOQTDJ1GV</td>
+<td>Z5rvq4gDByybWaB14RymlmBgl3ZoT0uZlXeagC0V</td>
+</tr>
+</tbody></table>
+<h3 id="启动与关闭服务器"><a href="#启动与关闭服务器" class="headerlink" title="启动与关闭服务器"></a>启动与关闭服务器</h3><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190744801.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326190744801.png" alt="image-20240326190744801"></p>
+<h1 id="实验1-2：安装Hadoop及HDFS应用实践"><a href="#实验1-2：安装Hadoop及HDFS应用实践" class="headerlink" title="实验1.2：安装Hadoop及HDFS应用实践"></a>实验1.2：安装Hadoop及HDFS应用实践</h1><h2 id="实验描述"><a href="#实验描述" class="headerlink" title="实验描述"></a>实验描述</h2><p>在之前购买的华为云ECS服务器上，搭建Hadoop集群。并使用idea创建maven工程，完成HDFS文件读取实践。</p>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>1.学习搭建Hadoop集群；</p>
+<p>2.学习创建maven工程；</p>
+<p>3.掌握HDFS文件读写操作。</p>
+<h2 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h2><h3 id="下载和安装远程登录传输服务器工具"><a href="#下载和安装远程登录传输服务器工具" class="headerlink" title="下载和安装远程登录传输服务器工具"></a>下载和安装远程登录传输服务器工具</h3><p>Putty工具</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191100613.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191100613.png" alt="image-20240326191100613"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191230703.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191230703.png" alt="image-20240326191230703"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191730806.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191730806.png" alt="image-20240326191730806"></p>
+<p>WinSCP工具</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191535075.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191535075.png" alt="image-20240326191535075"></p>
+<h3 id="Hadoop集群搭建"><a href="#Hadoop集群搭建" class="headerlink" title="Hadoop集群搭建"></a>Hadoop集群搭建</h3><h4 id="传统方法搭建Hadoop"><a href="#传统方法搭建Hadoop" class="headerlink" title="传统方法搭建Hadoop"></a>传统方法搭建Hadoop</h4><p>用SCP连接</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191849510.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326191849510.png" alt="image-20240326191849510"></p>
+<h5 id="将实验文件传入"><a href="#将实验文件传入" class="headerlink" title="将实验文件传入"></a>将实验文件传入</h5><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326192348374.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326192348374.png" alt="image-20240326192348374"></p>
+<h5 id="配置服务器间免密访问"><a href="#配置服务器间免密访问" class="headerlink" title="配置服务器间免密访问"></a>配置服务器间免密访问</h5><ul>
+<li><p>关闭防火墙，生成秘钥<img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326193009664-1711452610133-1.png" alt="image-20240326193009664"></p>
+</li>
+<li><p>获得公钥</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326193048381.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326193048381.png" alt="image-20240326193048381"></p>
+</li>
+</ul>
+<p>汇总</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326193951931.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326193951931.png" alt="image-20240326193951931"></p>
+<p>每个节点进行vim &#x2F;root&#x2F;.ssh&#x2F;authorized_keys并写入这些公钥</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326193635405.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326193635405.png" alt="image-20240326193635405"></p>
+<p>执行ifconfig获得内网IP</p>
+<ul>
+<li>192.168.0.95</li>
+<li>192.168.0.158</li>
+<li>192.168.0.83</li>
+<li>192.168.0.177</li>
+</ul>
+<p>vim &#x2F;etc&#x2F;hosts编辑hosts文件，加入node1~node4对应IP及node节点名。</p>
+<p>本节点的ip用刚刚查到的内网ip，其他节点的ip用外网ip</p>
+<p>这里node1~4分布对应服务器名称3214</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326194917052.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326194917052.png" alt="image-20240326194917052"></p>
+<p>顺利进行无密访问</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326195230646.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326195230646.png" alt="image-20240326195230646"></p>
+<h5 id="安装OpenJDK"><a href="#安装OpenJDK" class="headerlink" title="安装OpenJDK"></a>安装OpenJDK</h5><ul>
+<li>将jdk安装包拷贝到&#x2F;usr&#x2F;lib&#x2F;jvm目录下</li>
+</ul>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326195509044.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326195509044.png" alt="image-20240326195509044"></p>
+<ul>
+<li>在该节点将安装包分发到剩余3个节点</li>
+</ul>
+<p>这里出现了一次链接断开，所以改成在windows powershell上连接</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326200539701.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326200539701.png" alt="image-20240326200539701"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326200749390.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326200749390.png" alt="image-20240326200749390"></p>
+<p>检查一下，确实传到了</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326200913706.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326200913706.png" alt="image-20240326200913706"></p>
+<ul>
+<li>在node1~node4四个节点分别执行解压命令</li>
+</ul>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201046725.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201046725.png" alt="image-20240326201046725"></p>
+<ul>
+<li><p>在node1~node4四个节点上编辑&#x2F;etc&#x2F;profile配置环境变量</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201424499.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201424499.png" alt="image-20240326201424499"></p>
+</li>
+</ul>
+<p>​	刷新配置文件后的结果</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201449064.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201449064.png" alt="image-20240326201449064"></p>
+<h5 id="安装Hadoop"><a href="#安装Hadoop" class="headerlink" title="安装Hadoop"></a>安装Hadoop</h5><p>复制hadoop安装包到&#x2F;home&#x2F;modules下</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201658401.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201658401.png" alt="image-20240326201658401"></p>
+<p>配置hadoop环境变量</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201723584.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326201723584.png" alt="image-20240326201723584"></p>
+<p>发现之前传入的是docker版，这里重新找到了正确的压缩包并放入</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326202853220.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326202853220.png" alt="image-20240326202853220"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326203304296.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326203304296.png" alt="image-20240326203304296"></p>
+<p>完成环境变量设置和参数配置</p>
+<p>配置hadoop core-site.xml文件</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326203436187.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326203436187.png" alt="image-20240326203436187"></p>
+<p>配置hdfs-site.xml</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204253819.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204253819.png" alt="image-20240326204253819"></p>
+<p>yarn-site.xml</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204419210.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204419210.png" alt="image-20240326204419210"></p>
+<p>配置mapred-sit.xml</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204608791.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204608791.png" alt="image-20240326204608791"></p>
+<p>配置slaves</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204651871.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204651871.png" alt="image-20240326204651871"></p>
+<p>分发hadoop包到其余节点</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204918669.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326204918669.png" alt="image-20240326204918669"></p>
+<p>node1~node4四个节点配置HADOOP的环境变量并刷新</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212050248.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212050248.png" alt="image-20240326212050248"></p>
+<p>设置权限</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212304753.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212304753.png" alt="image-20240326212304753"></p>
+<p>在上传安装包的节点执行下列命令</p>
+<p>hadoop namenode -format</p>
+<p>启动hadoop：start-all.sh</p>
+<p>输入jps，发现成功</p>
+<ul>
+<li>主节点</li>
+</ul>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212509141.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212509141.png" alt="image-20240326212509141"></p>
+<ul>
+<li>子节点</li>
+</ul>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212602149.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212602149.png" alt="image-20240326212602149"></p>
+<p>可以发现主节点（Master Node）包含以下关键组件：</p>
+<ol>
+<li><strong>NameNode：</strong> 负责管理Hadoop文件系统（HDFS）的命名空间和文件块的元数据信息。</li>
+<li><strong>SecondaryNameNode：</strong> 负责定期合并编辑日志（edits log）和镜像（image）以及创建检查点（checkpoint），以减少NameNode的工作负载。</li>
+<li><strong>ResourceManager：</strong> 负责分配资源给各个应用程序的不同任务，以及监控这些资源的使用情况。</li>
+</ol>
+<p>而子节点（Slave Node）包含以下组件：</p>
+<ol>
+<li><strong>DataNode：</strong> 负责存储实际的数据块，并响应客户端或其他节点的读取请求。</li>
+<li><strong>NodeManager：</strong> 负责管理每个节点上的资源和任务，接收来自ResourceManager的指令，并协调本地资源的使用。</li>
+</ol>
+<p>​		这种设计的主要目的是实现分布式系统的高可用性、可靠性和性能优化。</p>
+<p>​		将文件系统的元数据（由NameNode管理）和实际数据存储（由DataNode管理）分开存储，可以提高系统的可靠性。因为如果数据节点发生故障，只会影响到数据的可用性，而元数据仍然可以由NameNode管理。同时，这种分离还允许数据节点在不同的物理服务器上进行分布，从而提高了系统的可伸缩性。</p>
+<p>​		ResourceManager负责整个集群资源的全局调度和监控，而NodeManager负责单个节点的资源管理和任务协调。这种分离允许每个节点上的NodeManager独立管理本地资源，并在需要时向ResourceManager请求更多资源，从而提高了集群资源的利用率和任务的执行效率。</p>
+<p>​		SecondaryNameNode的作用是帮助减轻NameNode的负载，通过定期合并和处理元数据的变更信息，从而减少NameNode的编辑日志和镜像的大小。这可以降低系统维护的成本，并提高整个系统的可靠性和性能。</p>
+<h3 id="方法2：Docker搭建Hadoop"><a href="#方法2：Docker搭建Hadoop" class="headerlink" title="方法2：Docker搭建Hadoop"></a>方法2：Docker搭建Hadoop</h3><h4 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h4><p>使用apt命令安装docker</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327084606310-1711500367325-1.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327084606310-1711500367325-1.png" alt="image-20240327084606310"></p>
+<p>运行sudo docker run hello-world</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085039043.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085039043.png" alt="image-20240327085039043"></p>
+<p>原因是docker版本不对</p>
+<p>应该还是用yum -y docker-ce来安装</p>
+<p>卸载之前的</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085342716.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085342716.png" alt="image-20240327085342716"></p>
+<p>安装epel更新源</p>
+<p>yum install -y vim wget epel-release</p>
+<p>设置仓库并稳定</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085511053.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085511053.png" alt="image-20240327085511053"></p>
+<p>安装</p>
+<p>sudo yum install -y docker-ce docker-ce-cli containerd.io</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085637507.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085637507.png" alt="image-20240327085637507"></p>
+<p>启动docker</p>
+<p>sudo systemctl start docker</p>
+<p>成！</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085723528.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327085723528.png" alt="image-20240327085723528"></p>
+<h4 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h4><p>新建文件夹Hadoop，将实验文件压缩包中的Dockerfile以及config文件夹放入</p>
+<p>下载hadoop-3.3.6并放入该文件夹，命名为<em>hadoop-3.3.6.tar.gz</em></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327090048678.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327090048678.png" alt="image-20240327090048678"></p>
+<p>用 docker build . -t hello-hadoop 命令创建image</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091128818.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091128818.png" alt="image-20240327091128818"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091739495.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091739495.png" alt="image-20240327091739495"></p>
+<p>FINISHED表示完成</p>
+<p>docker image ls</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091803735.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091803735.png" alt="image-20240327091803735"></p>
+<p>​	Image列表中存在hadoop了</p>
+<p>在四个终端中分别执行以下命令</p>
+<ul>
+<li>docker run -it -h master –name master hello-hadoop</li>
+<li>docker run -it -h master –name slave1 hello-hadoop</li>
+<li>docker run -it -h master –name slave2 hello-hadoop</li>
+<li>docker run -it -h master –name slave3 hello-hadoop</li>
+</ul>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091956961.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327091956961.png" alt="image-20240327091956961"></p>
+<p>​	进入docker了</p>
+<p>在四个终端中分别执行 cat &#x2F;etc&#x2F;hosts</p>
+<p>得到列表：</p>
+<p>172.17.0.2      master</p>
+<p>172.17.0.3      slave1</p>
+<p>172.17.0.4      slave2</p>
+<p>172.17.0.5      slave3</p>
+<p>将此列表分别写入四个节点的&#x2F;etc&#x2F;hosts文件，替换master一行</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092205099.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092205099.png" alt="image-20240327092205099"></p>
+<p>在每个节点分别执行”service ssh restart”重启ssh服务</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092321992.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092321992.png" alt="image-20240327092321992"></p>
+<p>在master节点执行”ssh slave1”查看是否能够登录到其他节点</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092405063.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092405063.png" alt="image-20240327092405063"></p>
+<p>将master节点中&#x2F;usr&#x2F;local&#x2F;hadoop&#x2F;etc&#x2F;hadoop&#x2F;workers中的localhost替换为以下内容：</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092503009.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092503009.png" alt="image-20240327092503009"></p>
+<p>在master节点分别执行以下三条命令：</p>
+<ol>
+<li><p>cd &#x2F;usr&#x2F;local&#x2F;hadoop</p>
+</li>
+<li><p>bin&#x2F;hdfs namenode -format</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092718666.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092718666.png" alt="image-20240327092718666"></p>
+</li>
+<li><p>sbin&#x2F;start-all.sh</p>
+</li>
+</ol>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092741011.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327092741011.png" alt="image-20240327092741011"></p>
+<p>出现报错</p>
+<p>vi &#x2F;etc&#x2F;profile 添加内容</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093417843.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093417843.png" alt="image-20240327093417843"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093356327.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093356327.png" alt="image-20240327093356327"></p>
+<p>解决之后再进行上述启动操作</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093555612.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093555612.png" alt="image-20240327093555612"></p>
+<p>这次成功了</p>
+<p>分别在master界面和slave节点执行命令jps</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093615389.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093615389.png" alt="image-20240327093615389"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093625048.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327093625048.png" alt="image-20240327093625048"></p>
+<h3 id="创建maven工程"><a href="#创建maven工程" class="headerlink" title="创建maven工程"></a>创建maven工程</h3><h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326205647487.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326205647487.png" alt="image-20240326205647487"></p>
+<h4 id="依赖设置"><a href="#依赖设置" class="headerlink" title="依赖设置"></a>依赖设置</h4><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210225151.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210225151.png" alt="image-20240326210225151"></p>
+<h4 id="设置语言环境"><a href="#设置语言环境" class="headerlink" title="设置语言环境"></a>设置语言环境</h4><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210430044.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210430044.png" alt="image-20240326210430044"></p>
+<h4 id="设置java-Compiler环境"><a href="#设置java-Compiler环境" class="headerlink" title="设置java Compiler环境"></a>设置java Compiler环境</h4><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210532258.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210532258.png" alt="image-20240326210532258"></p>
+<h3 id="java实现HDFS文件读写"><a href="#java实现HDFS文件读写" class="headerlink" title="java实现HDFS文件读写"></a>java实现HDFS文件读写</h3><h4 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h4><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210821812.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210821812.png" alt="image-20240326210821812"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210905712.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326210905712.png" alt="image-20240326210905712"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326214742233.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326214742233.png" alt="image-20240326214742233"></p>
+<p>​		记得也把端口50010也开放。</p>
+<p>​		之后需要将本地的rsa公钥复制到所有远程节点的authorkeys里面，这样就可以进行免密的ssh链接，这样才可以让本地的java毫无限制的访问远程服务器。</p>
+<p>​		此外为了让本地节点知道远程服务器传来的hostname对应的ip是什么，需要配置本地host文件，将对应内容改为</p>
+<h4 id="编写程序"><a href="#编写程序" class="headerlink" title="编写程序"></a>编写程序</h4><p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212720482.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326212720482.png" alt="image-20240326212720482"></p>
+<p>出现了log4j没有配置的错误</p>
+<p>加入</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326214330620.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326214330620.png" alt="image-20240326214330620"></p>
+<p>报错1</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326225258062.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240326225258062.png" alt="image-20240326225258062"></p>
+<p>使用这一套流程可以正确重启并检查是否正确配置</p>
+<p>stop-all.sh</p>
+<p>rm -rf $HADOOP_HOME&#x2F;tmp</p>
+<p>hadoop namenode -format</p>
+<p>start-all.sh</p>
+<p>jps</p>
+<p>hdfs dfsadmin -report</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327101812255.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327101812255.png" alt="image-20240327101812255"></p>
+<p>这里发现所有节点的hostname都被设置为了localhost这个是个严重的问题，需要去host文件里面把127.0.0.1的相关内容都删掉</p>
+<p>删掉之后使用上面的方式进行重启</p>
+<p>修复完成之后，我们情况hdfs之前的文件</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172759190.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172759190.png" alt="image-20240327172759190"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172833476.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172833476.png" alt="image-20240327172833476"></p>
+<p>结果输出</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172909523.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172909523.png" alt="image-20240327172909523"></p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172929610.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327172929610.png" alt="image-20240327172929610"></p>
+<p>上传成功的文件内容</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327173030871.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327173030871.png" alt="image-20240327173030871"></p>
+<p>下载下来的文件内容</p>
+<p class='item-img' data-src='/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327173100501.png'><img src="/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E4%B8%80.assets/image-20240327173100501.png" alt="image-20240327173100501"></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/03/24/Me/">Me Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/xx">Nervld</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1-1%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%8D%8E%E4%B8%BA%E4%BA%91%E6%9E%84%E5%BB%BA%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">实验1.1：基于华为云构建大数据实验环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E9%AA%8C%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">一、实验描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">1.2.</span> <span class="toc-text">二、实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.3.</span> <span class="toc-text">三、实验步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%80%89%E6%8B%A9%E5%BC%B9%E6%80%A7%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8ECS"><span class="toc-number">1.3.1.</span> <span class="toc-text">进入控制台选择弹性云服务器ECS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80OBS%E6%9C%8D%E5%8A%A1%E5%88%9B%E5%BB%BA%E6%A1%B6"><span class="toc-number">1.3.2.</span> <span class="toc-text">打开OBS服务创建桶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%85%B3%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.3.3.</span> <span class="toc-text">启动与关闭服务器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1-2%EF%BC%9A%E5%AE%89%E8%A3%85Hadoop%E5%8F%8AHDFS%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5"><span class="toc-number">2.</span> <span class="toc-text">实验1.2：安装Hadoop及HDFS应用实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">实验描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.2.</span> <span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.3.</span> <span class="toc-text">实验步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%BC%A0%E8%BE%93%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B7%A5%E5%85%B7"><span class="toc-number">2.3.1.</span> <span class="toc-text">下载和安装远程登录传输服务器工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="toc-number">2.3.2.</span> <span class="toc-text">Hadoop集群搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95%E6%90%AD%E5%BB%BAHadoop"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">传统方法搭建Hadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E5%AE%9E%E9%AA%8C%E6%96%87%E4%BB%B6%E4%BC%A0%E5%85%A5"><span class="toc-number">2.3.2.1.1.</span> <span class="toc-text">将实验文件传入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%97%B4%E5%85%8D%E5%AF%86%E8%AE%BF%E9%97%AE"><span class="toc-number">2.3.2.1.2.</span> <span class="toc-text">配置服务器间免密访问</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85OpenJDK"><span class="toc-number">2.3.2.1.3.</span> <span class="toc-text">安装OpenJDK</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hadoop"><span class="toc-number">2.3.2.1.4.</span> <span class="toc-text">安装Hadoop</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%952%EF%BC%9ADocker%E6%90%AD%E5%BB%BAHadoop"><span class="toc-number">2.3.3.</span> <span class="toc-text">方法2：Docker搭建Hadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="toc-number">2.3.3.2.</span> <span class="toc-text">集群搭建</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B"><span class="toc-number">2.3.4.</span> <span class="toc-text">创建maven工程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.3.4.1.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.4.2.</span> <span class="toc-text">依赖设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83"><span class="toc-number">2.3.4.3.</span> <span class="toc-text">设置语言环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEjava-Compiler%E7%8E%AF%E5%A2%83"><span class="toc-number">2.3.4.4.</span> <span class="toc-text">设置java Compiler环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java%E5%AE%9E%E7%8E%B0HDFS%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-number">2.3.5.</span> <span class="toc-text">java实现HDFS文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="toc-number">2.3.5.1.</span> <span class="toc-text">开放端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.3.5.2.</span> <span class="toc-text">编写程序</span></a></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
