@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>从Unity到UE | Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/mybg3.png');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.1.1"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>从Unity到UE</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-08-02T11:06:55.160Z" id="date"> 2025-08-02</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-08-02T12:39:47.882Z" id="updated"> 2025-08-02</time></div></span><br><span>Word Count: <div class="control">2k</div></span><br><span>Read Time: <div class="control">7 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>最近重新拾起UE学习一段时间了，发现再次学习感悟确实比一开始多。<br>并且逐渐发现了引擎的共通之处。<br>故撰此文章来进行梳理，以引导后来的朋友，解我当初不能解之疑惑。</p>
+<p>毕竟当时我从Unity开始往UE转的时候，真的各种不习惯，也想着找一个别人总结的经验贴，但是当时感觉这些博客的比较太过公式化（也就是罗列各种API，仅仅是在UE C++中复刻Unity中的C#代码）。<br>但忽略了我们真正的疑惑和需求。</p>
+<blockquote>
+<p>所以，我希望能从更加接近引擎设计逻辑的角度去探讨他们的不同，以及从一个具体的例子来指导我们逐步认识UE</p>
+</blockquote>
+<h1 id="粗略对比"><a href="#粗略对比" class="headerlink" title="粗略对比"></a>粗略对比</h1><h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><h3 id="文件组织结构"><a href="#文件组织结构" class="headerlink" title="文件组织结构"></a>文件组织结构</h3><p>Unity组织结构是一个Asset里面放置当前项目的所有资产和代码，当你打开一个unitypackage的时候，Unity会帮你直接导入到Asset文件夹，而UE这边则是导入Content文件夹。</p>
+<p>我们当然可以把Content当做Asset去使用，但是UE其实是提醒我们：</p>
+<blockquote>
+<p>我们自己的文件和资源也要创建一个文件夹，名字就是我们项目名称，这样我们的资源和Content资源就可以完全分开，我们需要什么，再去复制那一部分资源即可。</p>
+</blockquote>
+<h3 id="场景视图以及游戏对象"><a href="#场景视图以及游戏对象" class="headerlink" title="场景视图以及游戏对象"></a>场景视图以及游戏对象</h3><p>Unity的场景视图内的GameObject我们可以随意修改他们的父子关系，可是在UE里面并不容易，因此之前在Unity中使用的灵活的给不同物体创建脚本，甚至在游戏运行过程中在场景视图里面再去轻松的启用和关闭脚本、改变物体父子关系等等，就显得不那么适用。</p>
+<p>而这就引出了Unity和UE对待游戏对象很大的不同</p>
+<blockquote>
+<p>Unity开发者更喜欢<code>组合</code>的开发模式，把功能分散到各个脚本中，而脚本又分散到各个物体上，因为创造脚本很容易，并且每个脚本都能充分调用Unity的功能，再给自己加上各种组件。</p>
+<p>而UE开发者大部分时间用的是<code>继承</code>，比如创建一个个蓝图类去继承C++类，对于喜欢纯C++开发逻辑的我，比较倾向于将<code>蓝图</code>类比为Unity里面的<code>Prefab</code>，因为我的逻辑主要用C++实现，而创建蓝图，主要是为了将他们作为实例化对象，并且修改一些绑定的资源。</p>
+</blockquote>
+<h2 id="引擎现有代码"><a href="#引擎现有代码" class="headerlink" title="引擎现有代码"></a>引擎现有代码</h2><p>对于这一部分，我并没有做完整充分的调研，就个人感觉而言，Unity很多代码似乎集中在编辑器部分，这使得Unity的编辑器很稳定而且很好用。但UE的代码很多都集中在各种实用的功能上，比如一个自带的第三人称控制器，里面甚至包含了联机需要的代码。</p>
+<p>所以如果我们的目的单纯是制作游戏，那么当我们熟悉UE之后，做出一个功能完善的游戏是更加容易的。</p>
+<h2 id="我们要写的代码"><a href="#我们要写的代码" class="headerlink" title="我们要写的代码"></a>我们要写的代码</h2><p>正因为UE为我们添加了那么多功能和限定，让我们自己想要开始写功能的时候，最好的方案不是从零开始，而是先学习正确的使用方法，然后再编写代码。</p>
+<p>好在现在AI工具非常强大，并且虚幻官方的论坛也有很多问题的答案。<br>因此我们要做的就是熟悉虚幻给我们的各种类。</p>
+<p>比如当我想要制作一个人物控制器的时候，涉及到的类就包括<code>动画蓝图</code>、<code>角色控制器</code>、<code>SkeletalMesh</code>，<code>Montage</code>、<code>blend space</code>等等，当然这些功能我们在学Unity的时候也是一点点学的，所以接受就好了，记住他们一般的作用流程。</p>
+<p>最关键的是当我们想要真正写自己的C++代码的时候，我们得在.h文件里面定义变量，通常是一些资产、一些组件的引用等等，这些名字我们要了解，可以从蓝图里面去找对应的名字。随后我们在.cpp文件中实例化这些组件，使用这些组件，并且可以通过方法改变这些组件的父子关系。</p>
+<blockquote>
+<p>不同于Unity中我们可以轻松的将组件和游戏对象区分开，这里我们要记得AActor是类似于GameObject的存在，但是Component也有可能是一个拥有自己Transform和独特功能的类似GameObject的存在，但是他们并不相同，比如AttachToComponent和AttachToActor，可以分别做到将一个对象转移到Component或者Actor的下面。（将一个物体转移到Component下？这在Unity是无法想象的）</p>
+</blockquote>
+<p>有时候蓝图里面的方法想要在C++使用并不方便，但是坚持用C++能让对象的引用关系和逻辑变得清晰。<br>所以这里只能通过逐渐学习来熟悉API。</p>
+<h1 id="以一个例子来详细对比"><a href="#以一个例子来详细对比" class="headerlink" title="以一个例子来详细对比"></a>以一个例子来详细对比</h1><blockquote>
+<p>比如说我们要实现一个第三人称射击游戏：</p>
+</blockquote>
+<p>在Unity中我们会创建一个空物体，然后给他绑定上碰撞体，动画器，再给他加一个子物体，显示出角色蒙皮，我们下载好动画资源并改为humanoid，就可以和角色适配上。<br>但是在UE里，我们的动画需要经过重定向操作（相比还是挺耗时的）以更好的适配动画数据。</p>
+<p>Unity我们在动画器里面做出各种状态过渡，然后用C#代码给这些过渡条件提供值或者触发，而UE里面AnimInstance类就是动画器，我们创建一个C++代码继承它之后，它的成员就可以暴露给自己的蓝图子类，在子类里面编辑动画状态转移。</p>
+<p>为了实现武器拾取，我们都会在骨骼上放置插槽，当武器拾取之后，我们重新绑定父对象并设置Transform组件。只不过UE里面转移物体位置的函数，就自带可以填入插槽名称和Transform变化方式的参数。</p>
+<p>我们的武器需要生成子弹，这就需要创建一个子弹预制体以及子弹发射位置，在Unity中我们自然的完成这一动作，并用Instantiate进行实例化预制体，Instantiate是GameObject的方法，但是在UE中，我们用GetWorld()-&gt;SpawnActor&lt;&gt;()，并且我们如果要传入蓝图类，可以定义一个STSubclassOf&lt;AActor&gt;变量用于在编辑器里面传入蓝图类，然后我们把它当做预制体来生成。</p>
+<p>在Unity中我们可以用骨骼偏移来制作瞄准效果，UE中我们则使用Montage来在原本基础上再播放一个动画去覆盖原本动画。和Unity一样，动画文件里面可以放置通知，但是UE更多的是可以放置粒子特效什么的。Unity里面自动调用同名函数，而UE里面是在通知前面加上AnimNotify_作为前缀的方法，会自动调用。（UE是这样的，喜欢在各种地方加上前缀来标注，但是实际上用到的确实去除前缀后缀的属性、函数）</p>
+<p>其实UE用多了之后，会发现思路被UE的规则梳理过一遍之后，变得更清晰。当然在UE学习使用的过程中也会遇到各种各样意想不到的问题，这些在以后的文章中再分享~</p>
+<h1 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h1><p>用了UE的资产商店才知道优质的免费资源原来这么多，现在虽然虚幻商城全面转到了Fab上，但是免费资产赠送依然存在，并且据说周期缩短了，有时可以看到资产上面标注了对Unity的兼容性。</p>
+<p>Fab商城链接：<a target="_blank" rel="noopener" href="https://www.fab.com/zh-cn">Fab</a></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/08/01/Diary/2025-08-01%20%E6%AF%94%E8%BE%83%E6%B7%B7%E4%B9%B1%E7%9A%84%E4%B8%80%E5%A4%A9/">比较混乱的一天 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B2%97%E7%95%A5%E5%AF%B9%E6%AF%94"><span class="toc-number">2.</span> <span class="toc-text">粗略对比</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.1.</span> <span class="toc-text">文件组织结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E8%A7%86%E5%9B%BE%E4%BB%A5%E5%8F%8A%E6%B8%B8%E6%88%8F%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.1.2.</span> <span class="toc-text">场景视图以及游戏对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E6%93%8E%E7%8E%B0%E6%9C%89%E4%BB%A3%E7%A0%81"><span class="toc-number">2.2.</span> <span class="toc-text">引擎现有代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E8%A6%81%E5%86%99%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text">我们要写的代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A5%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E6%9D%A5%E8%AF%A6%E7%BB%86%E5%AF%B9%E6%AF%94"><span class="toc-number">3.</span> <span class="toc-text">以一个例子来详细对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="toc-number">4.</span> <span class="toc-text">题外话</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
