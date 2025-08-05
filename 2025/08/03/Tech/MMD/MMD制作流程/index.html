@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MMD制作流程 | Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/mybg3.png');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.1.1"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>MMD制作流程</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-08-03T10:30:35.781Z" id="date"> 2025-08-03</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-08-03T10:33:17.377Z" id="updated"> 2025-08-03</time></div></span><br><span>文章总字数: <div class="control">2.3k</div></span><br><span>预计阅读时间: <div class="control">8 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h2 id="初始准备"><a href="#初始准备" class="headerlink" title="初始准备"></a>初始准备</h2><ol>
+<li>拖入人物场景模型</li>
+<li>拖入ray.x, ray_controller.pmx</li>
+<li>拖入天空盒的pmx</li>
+<li>修改<strong>绘制顺序</strong>skybox&gt;stage&gt;actor</li>
+<li>人物场景加上main.fx</li>
+<li><strong>EnvLightMap</strong>给天空盒上fx，材质也要改成skybox，再加fog</li>
+</ol>
+<ul>
+<li>如果有旋转，main里也要改成一样的</li>
+</ul>
+<ol start="7">
+<li>关闭显示地面<strong>阴影，抗锯齿，过滤各向异性</strong></li>
+</ol>
+<h2 id="MME各栏介绍"><a href="#MME各栏介绍" class="headerlink" title="MME各栏介绍"></a>MME各栏介绍</h2><h3 id="Main："><a href="#Main：" class="headerlink" title="Main："></a>Main：</h3><ul>
+<li>main_ex_alpha:对天空盒透明</li>
+<li>main_ex_mask:对场景透明</li>
+<li>main_ex_noalpha:不透明</li>
+<li>main_ex_with_sphmap:启用镜面插槽</li>
+</ul>
+<h3 id="MaterialMap："><a href="#MaterialMap：" class="headerlink" title="MaterialMap："></a>MaterialMap：</h3><blockquote>
+<p>通过photoshop&gt;滤镜&gt;3D创建材质的法线贴图和凹凸贴图，放在一个文件夹里，将matirial复制一份放进去，修改最后一行为..&#x2F;，还有贴图路径，再用这个material替换掉原来的</p>
+<p><em>readme里有具体修改属性</em></p>
+</blockquote>
+<h3 id="SSAOMap："><a href="#SSAOMap：" class="headerlink" title="SSAOMap："></a>SSAOMap：</h3><p>&#x3D;&#x3D;在shadow里&#x3D;&#x3D;</p>
+<ul>
+<li>通过选择不同的SSAO.fx调整环境光遮蔽的程度</li>
+</ul>
+<p><strong>建议：</strong>将人整体的系数调低，眼睛直接改为0</p>
+<h3 id="PSSM"><a href="#PSSM" class="headerlink" title="PSSM:"></a>PSSM:</h3><p>一共有四个，对应摄像机的四个方向，主要调整影子的有无</p>
+<p class='item-img' data-src='/2025/08/03/Tech/MMD/MMD%E5%88%B6%E4%BD%9C%E6%B5%81%E7%A8%8B/mmd_ray.png'><img src="/2025/08/03/Tech/MMD/MMD%E5%88%B6%E4%BD%9C%E6%B5%81%E7%A8%8B/mmd_ray.png"></p>
+<h3 id="SKYBOX"><a href="#SKYBOX" class="headerlink" title="SKYBOX:"></a>SKYBOX:</h3><ul>
+<li>左上：色彩平衡</li>
+<li>左下：漫反射色彩平衡</li>
+<li>右上：<ul>
+<li>光强，镜反射，次表面亮度（通透渡），光向</li>
+</ul>
+</li>
+<li>右下：</li>
+</ul>
+<p>HSBV：固有色，纯度，亮度，强度</p>
+<p><strong>Sky Hemisphere</strong>：</p>
+<p>纯白背景天空盒，可以调颜色；</p>
+<p><strong>Sky Night</strong>：</p>
+<p>与上面类似，默认黑色；</p>
+<p><strong>Time of Day</strong>：</p>
+<ul>
+<li>main材质改为skybox材质</li>
+<li>再改EnvLightMap和FogMap(选最长的)</li>
+</ul>
+<p><em>特点</em>：物理天空，丁达尔效应，调整太阳位置</p>
+<p><em>用法</em>：可以在帧里注册照明操作，实现动画</p>
+<ul>
+<li>左上：太阳大小，强度，物理化，偏移，虚拟太阳高度</li>
+<li>左下：调整雾气</li>
+<li>右上：</li>
+<li>右下：调整云朵数量，运动</li>
+</ul>
+<h3 id="RAY："><a href="#RAY：" class="headerlink" title="RAY："></a>RAY：</h3><ul>
+<li>左上：光强，阴影颜色·强度，环境光遮蔽，光线通透性(SSSS)</li>
+<li>右上：将ray.x追踪到模型，拉高MeasureMode</li>
+<li>左下：尽量不要先动，后期添加额外插件</li>
+<li>右下：调色</li>
+</ul>
+<h2 id="MME插件使用"><a href="#MME插件使用" class="headerlink" title="MME插件使用"></a>MME插件使用</h2><h3 id="LightBloom："><a href="#LightBloom：" class="headerlink" title="LightBloom："></a>LightBloom：</h3><blockquote>
+<p>背景&gt;附件设定，放在所有MME下面</p>
+</blockquote>
+<h3 id="Spectrum："><a href="#Spectrum：" class="headerlink" title="Spectrum："></a>Spectrum：</h3><blockquote>
+<p>音频可视化</p>
+</blockquote>
+<p>将wav格式的音频拖到tool的run上</p>
+<p>替换对应的texture，将fx，pmx拖到mmd里</p>
+<h2 id="删除动作镜头音乐"><a href="#删除动作镜头音乐" class="headerlink" title="删除动作镜头音乐"></a>删除动作镜头音乐</h2><p>左边的框中大筐筐底部的小框里可以更换一下选择范围，输入初始和结束帧，点击范围选择，删除。</p>
+<p>音乐直接拖入新的即可。ps:千万不要在播放时拖入音乐。</p>
+<h2 id="调整模型位置"><a href="#调整模型位置" class="headerlink" title="调整模型位置"></a>调整模型位置</h2><p>人物和场景可以直接按选择全部后调整，相机需要根据人物更改中心</p>
+<h2 id="PR使用"><a href="#PR使用" class="headerlink" title="PR使用"></a>PR使用</h2><p>配色方案可以试试:</p>
+<ul>
+<li>Adode 2</li>
+<li>Adobe -4</li>
+<li>SL BIG</li>
+<li>SL CLEAN KODAK A&#x2F;B&#x2F;C</li>
+<li>SL GOLD …</li>
+<li>SL NEUTRAL START</li>
+</ul>
+<p>PR导出设置</p>
+<p>- </p>
+<ul>
+<li><p>1080p目标比特率5.5,最大比特率23</p>
+</li>
+<li><p>4K目标比特率19,最大比特率58</p>
+</li>
+<li><p>音频AAC 48000Hz 320 优先比特率</p>
+</li>
+</ul>
+<h2 id="Unity"><a href="#Unity" class="headerlink" title="Unity"></a>Unity</h2><p>插件导入人物模型，换成人形avatar</p>
+<h2 id="Blender"><a href="#Blender" class="headerlink" title="Blender"></a>Blender</h2><p>导入blender将人物按照材质切分后调整</p>
+<p>在水滴那一栏的刚体世界环境里的缓存下点 烘焙所有动力学计算结果，在这之前要材质切分</p>
+<p>blender添加材质主要用着色器-&gt;原理化BSDF并在右边连接材质输出（表面）</p>
+<p><em>勾选插件Node:Node Wrangler并选择原理化BSDF类型，快捷键ctrl+shift+t</em></p>
+<p>可以在左上角进入贴图文件夹，将贴图拖入</p>
+<p>材质输出需要折叠一下再展开</p>
+<p>选中贴入入口，回车 下 回车 一个个试</p>
+<p>选中整个人物（蒙皮+骨骼），可以右键，选择层级，导入动作</p>
+<p>导出材质：</p>
+<ul>
+<li>在shading页面新建做下新建贴图，</li>
+</ul>
+<h2 id="MMD-Blender-Unity"><a href="#MMD-Blender-Unity" class="headerlink" title="MMD+Blender+Unity"></a>MMD+Blender+Unity</h2><h3 id="MMD"><a href="#MMD" class="headerlink" title="MMD"></a>MMD</h3><p>先用MMD汉化版，导入模型动作，相机调零后选择追踪头，按住ctrl对焦眼睛后进入头部，点击注册保存</p>
+<p>之后通过英文版打开，MMDBridge里选blender，下面日文选短的，后面填长度和30fps（必须）</p>
+<p>导出分辨率200x200 帧率30fps （骼，到骨骼那一栏勾选插件，调参</p>
+<ul>
+<li>头发建议0.2&#x2F;0.2&#x2F;15&#x2F;0.2&#x2F;0.3&#x2F;0.2</li>
+<li>尾巴建议0.1&#x2F;0.2&#x2F;13&#x2F;0.5&#x2F;0&#x2F;2</li>
+</ul>
+<p>选择头发到编辑模式，选择全部，按M选择按距离，用L选择一部分，按P分离选中，就可以专心做头发了（最好反向选择，选少点），头发的部分要ctrl+j合并</p>
+<p>选择不想移动的部分，新建顶点组（绿色三角）并且指定</p>
+<p>物理（行星）那一栏，创建布料，在缓存里修改总帧数，在形状里将他订到我们之前创的组里，勾选压力和内部弹簧，调参，记得回到物体模式</p>
+<p>导出fbx勾选：选定的物体，类型为骨架和网格；路径模式选择复制，勾选右边的内嵌纹理</p>
+<h3 id="Unity-1"><a href="#Unity-1" class="headerlink" title="Unity"></a>Unity</h3><ul>
+<li>去<a target="_blank" rel="noopener" href="http://stereoarts.jp/">Stereoarts Homepage</a>下载插件<a target="_blank" rel="noopener" href="http://stereoarts.jp/MMD4Mecanim_Beta_20200105.zip">MMD4Mecanim_Beta_20200105.zip</a></li>
+<li>导入两个unitypackage</li>
+<li>拖入人物模型文件夹，勾选同意协议后拖入动作vmd点击process</li>
+</ul>
+<p>scene里不显示光照把灯泡标志打开</p>
+<p>如果发现光照怎么调都调不对，可以看看场景的光照map，可以设置为none</p>
+<p>将人物导入，一个做模型，一个带动画，记得改名，然后将动画拖出来，放在自己的动画控制器上，并且也可备份（点一下模型，把动画名字改下，这下就可以复制了ctrl+D）<strong>转出动作之后一定要先把模型骨骼改成人形，动画改成减少关键帧0.2</strong></p>
+<p>完成之后可以把pmx删掉，这样下次材质就不会乱了</p>
+<p>天空盒材质球一定要设置为cube形式，可以在HDRP Default Setting里设置，也可以通过在Volume里覆盖，记得把Visual Environment改成HDRI SKY，选择hdri天空发现黑的，改变intensity mode</p>
+<p>PBR:将材质的smoothness和metalic和coatMask调低，metalic和smoothness在中间左右，再给脸上打光；mask上纯蓝色的toon贴图</p>
+<p>hdrp的volume有默认（在project settings里），有全局有局部；另外graphics里面要和当前设定的挡位一致</p>
+<p>贴身衣物穿模要调整z offset</p>
+<p>一般调整：将bae&#x2F;shade feature拉高，shadowMap变黑，System Shadow降低，添加描边（如果加了没用就切换一下场景），basic lookdevs里面调整阴影，皮肤调整为棕红，其他为黑灰色</p>
+<p>头发绑骨骼：</p>
+<ul>
+<li>安装animation rigging和magica cloth</li>
+<li>选中角色在工具栏中可视化骨骼，如果要取消就把他的组件删掉</li>
+<li>在角色中新建一个magica bone cloth</li>
+<li>拖入根节点后按start Point Selection，红色为固定节点，绿色为移动，黑色为无关，检查好后按end</li>
+<li>在parameters里选择预设preset后create</li>
+</ul>
+<p>制作动画：</p>
+<ul>
+<li><p>在timeline里放入人物的动画器</p>
+</li>
+<li><p>人物为通用形</p>
+</li>
+<li><p>在人物下创建bonerenderer和RigBuilder</p>
+</li>
+<li><p>空物体Rigs添加Rig，下面再添加空物体作为ik节点，按住ctrl选中手掌系欸但，点击工具栏里的align，再在下面添加twoBoneIK，分别放入手臂，手肘，手腕</p>
+</li>
+<li><p>把自己拖到target里</p>
+</li>
+<li><p>可以选中IK节点给他一个标识</p>
+</li>
+<li><p>用finalik：</p>
+<ul>
+<li>在对应的位置创建target作为控制和记录的节点，可以把他们放在同一个空物体上</li>
+</ul>
+</li>
+</ul>
+<p>在做裙子物理时要往下来点，否则会出现鼓包</p>
+<h2 id="实景合成"><a href="#实景合成" class="headerlink" title="实景合成"></a>实景合成</h2><ul>
+<li><p>将素材放入ae左上后拖入合成，左上角出现的预合成改成30帧，将他拖入合成，获得目标素材</p>
+</li>
+<li><p>右侧找到跟踪器，点击跟踪摄像机，不行的话用左边高级的详细分析</p>
+</li>
+<li><p>PR将文件转为avi，视频编码器为Intel IYUV编码解码器，导入MMD点击省性能</p>
+</li>
+<li><p>解析好后选择地面区块，设置地平面和原点，添加镜头和文本</p>
+</li>
+<li><p>选中摄像机，文件-脚本-运行实景合成脚本调整好场景大小导出（记得先再编辑-首选项-脚本和表达式里勾选允许脚本写入文件）</p>
+</li>
+<li><p>先将工具包里的fx放入材质文件夹，再拖入pmx，下面调整off</p>
+</li>
+<li><p><strong>给插件上材质</strong>，打开插件调整阴影位置</p>
+</li>
+<li><p>之后用ray渲染，拖入人物，天空盒选用Sky Hemisphere</p>
+</li>
+<li><p>fastTop+ focalLength- EnvDiffLight 0.01 EnvSSSL+ EnvSpecLight(镜反射)- bottomV-</p>
+</li>
+<li><p>Sunlight- shadowV- Contrast-</p>
+</li>
+<li><p>PSM里把插件消去，SSAO改为100</p>
+</li>
+<li><p>导出绿幕视频，拖到pr，aep文件也拖入pr</p>
+</li>
+<li><p>pr右侧效果找到视屏效果-键控-超级键，主要颜色选中绿布，有绿布可以降低阴影</p>
+</li>
+</ul>
+<h2 id="流程2-0"><a href="#流程2-0" class="headerlink" title="流程2.0"></a>流程2.0</h2><ul>
+<li>载入ray和water（在材质&gt;可编程&gt;水）和平行光</li>
+<li>加入skyBox，调整顺序</li>
+<li>上天空盒材质，main材质</li>
+<li>添加预设控制器数据</li>
+<li>把water的main和材质关掉</li>
+<li>加入模型，显示轮廓线大小最小</li>
+<li>人物main中毛发改为最长的main</li>
+<li>人物材质上Toon下的material02</li>
+<li>将平行光的lightMap改为最后一个，有阴影</li>
+<li>材质skin默认，face中，eye弱</li>
+<li>加入AL大小0.3</li>
+<li>绘制顺序：<ul>
+<li>天空盒-timeofday-模型-MME-controller</li>
+</ul>
+</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/08/03/Tech/MMD/MMD%E6%B5%81%E7%A8%8B%E8%BF%AD%E4%BB%A3/">MMD流程迭代 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">初始准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MME%E5%90%84%E6%A0%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">MME各栏介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Main%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">Main：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MaterialMap%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">MaterialMap：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSAOMap%EF%BC%9A"><span class="toc-number">2.3.</span> <span class="toc-text">SSAOMap：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PSSM"><span class="toc-number">2.4.</span> <span class="toc-text">PSSM:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SKYBOX"><span class="toc-number">2.5.</span> <span class="toc-text">SKYBOX:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAY%EF%BC%9A"><span class="toc-number">2.6.</span> <span class="toc-text">RAY：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MME%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">MME插件使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LightBloom%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">LightBloom：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spectrum%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">Spectrum：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%8A%A8%E4%BD%9C%E9%95%9C%E5%A4%B4%E9%9F%B3%E4%B9%90"><span class="toc-number">4.</span> <span class="toc-text">删除动作镜头音乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">调整模型位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PR%E4%BD%BF%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">PR使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unity"><span class="toc-number">7.</span> <span class="toc-text">Unity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blender"><span class="toc-number">8.</span> <span class="toc-text">Blender</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MMD-Blender-Unity"><span class="toc-number">9.</span> <span class="toc-text">MMD+Blender+Unity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MMD"><span class="toc-number">9.1.</span> <span class="toc-text">MMD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unity-1"><span class="toc-number">9.2.</span> <span class="toc-text">Unity</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%99%AF%E5%90%88%E6%88%90"><span class="toc-number">10.</span> <span class="toc-text">实景合成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B2-0"><span class="toc-number">11.</span> <span class="toc-text">流程2.0</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

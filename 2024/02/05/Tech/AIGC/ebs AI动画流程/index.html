@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ebs AI动画流程 | Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/mybg3.png');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.1.1"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>ebs AI动画流程</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-02-05T14:00:37.447Z" id="date"> 2024-02-05</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-08-03T10:42:13.482Z" id="updated"> 2025-08-03</time></div></span><br><span>文章总字数: <div class="control">363</div></span><br><span>预计阅读时间: <div class="control">1 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><p>使用指令</p>
+<p>ffmpeg -i file.mp4 -vf fps&#x3D;12 %d.png</p>
+<p>负面提示词：easynegative</p>
+<p>正面提示词：masterpiece, best quality, 1girl, solo</p>
+<p>提示词权重：(1girl:1.2)</p>
+<p>采样方式有：Euler系列和DPM++系列，可以在脚本中用X&#x2F;Y&#x2F;Z Plot对比</p>
+<p>常用高宽：512 &#x2F; 768 &#x2F; 1024</p>
+<p>Controlnet</p>
+<p class='item-img' data-src='/2024/02/05/Tech/AIGC/ebs%20AI%E5%8A%A8%E7%94%BB%E6%B5%81%E7%A8%8B/image-20240205223054226.png'><img src="/2024/02/05/Tech/AIGC/ebs%20AI%E5%8A%A8%E7%94%BB%E6%B5%81%E7%A8%8B/image-20240205223054226.png" alt="image-20240205223054226"></p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ul>
+<li><p>将图片丢到tagger里面筛选出描述姿势的词</p>
+</li>
+<li><p>使用三个controlnet</p>
+<ul>
+<li>tile   以promot为准</li>
+<li>depth  权重0.6</li>
+<li>reference only   目标角色图片，需要扣掉背景</li>
+</ul>
+</li>
+</ul>
+<p>02:  1girl, solo, , open mouth, 均匀, looking at viewer, simple background, smile, arms behind head,  cowboy shot, arms up</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>ffmpeg -r 12 -f image2 -i %d.png output1.mp4</p>
+<h2 id="补帧"><a href="#补帧" class="headerlink" title="补帧"></a>补帧</h2><p>先速度拉满从12-&gt;24，再质量拉满从24-&gt;60</p>
+<h1 id="Ebs流程"><a href="#Ebs流程" class="headerlink" title="Ebs流程"></a>Ebs流程</h1><h2 id="stage1-将视频拆成单帧"><a href="#stage1-将视频拆成单帧" class="headerlink" title="stage1 将视频拆成单帧"></a>stage1 将视频拆成单帧</h2><p>输入一个项目路径</p>
+<p>输入文件路径，注意用\斜杠</p>
+<h2 id="stage1-生成蒙版"><a href="#stage1-生成蒙版" class="headerlink" title="stage1 生成蒙版"></a>stage1 生成蒙版</h2><p>将关键帧和全部帧分别生成蒙版到</p>
+<p><strong>video_mask</strong> 和 <strong>video_key_mask</strong></p>
+<h2 id="stage2-给关键帧打上tag"><a href="#stage2-给关键帧打上tag" class="headerlink" title="stage2 给关键帧打上tag"></a>stage2 给关键帧打上tag</h2><p>就是把反推出来的tag保存到源文件中</p>
+<h2 id="stage3-进入图生图"><a href="#stage3-进入图生图" class="headerlink" title="stage3 进入图生图"></a>stage3 进入图生图</h2><p>进行单帧渲染</p>
+<p>输入目录为关键帧，输出目录为img2img_key</p>
+<p>去噪强度和重绘幅度一致</p>
+<p>FirstGen回送源Current、</p>
+<p>启动single mode， maskinpaint，与图片名称匹配</p>
+<p>输入关键帧蒙版路径</p>
+<p>从文本文件读取提示词</p>
+<h2 id="stage4-批量放大图片"><a href="#stage4-批量放大图片" class="headerlink" title="stage4 批量放大图片"></a>stage4 批量放大图片</h2><p>批量放大输出目录 img2img_upscale_key</p>
+<h2 id="stage5-点击生成ebs文件"><a href="#stage5-点击生成ebs文件" class="headerlink" title="stage5 点击生成ebs文件"></a>stage5 点击生成ebs文件</h2><h2 id="stage7-点击生成视频"><a href="#stage7-点击生成视频" class="headerlink" title="stage7 点击生成视频"></a>stage7 点击生成视频</h2><h2 id="stage8-替换视频背景"><a href="#stage8-替换视频背景" class="headerlink" title="stage8 替换视频背景"></a>stage8 替换视频背景</h2><h1 id="知识"><a href="#知识" class="headerlink" title="知识"></a>知识</h1><h2 id="采样器"><a href="#采样器" class="headerlink" title="采样器"></a>采样器</h2><p class='item-img' data-src='/2024/02/05/Tech/AIGC/ebs%20AI%E5%8A%A8%E7%94%BB%E6%B5%81%E7%A8%8B/image-20240208141349643.png'><img src="/2024/02/05/Tech/AIGC/ebs%20AI%E5%8A%A8%E7%94%BB%E6%B5%81%E7%A8%8B/image-20240208141349643.png" alt="image-20240208141349643"></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-start"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/03/24/hello-world/">← 下一篇 Hello World</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-number">2.</span> <span class="toc-text">输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%B8%A7"><span class="toc-number">3.</span> <span class="toc-text">补帧</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ebs%E6%B5%81%E7%A8%8B"><span class="toc-number"></span> <span class="toc-text">Ebs流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#stage1-%E5%B0%86%E8%A7%86%E9%A2%91%E6%8B%86%E6%88%90%E5%8D%95%E5%B8%A7"><span class="toc-number">1.</span> <span class="toc-text">stage1 将视频拆成单帧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stage1-%E7%94%9F%E6%88%90%E8%92%99%E7%89%88"><span class="toc-number">2.</span> <span class="toc-text">stage1 生成蒙版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stage2-%E7%BB%99%E5%85%B3%E9%94%AE%E5%B8%A7%E6%89%93%E4%B8%8Atag"><span class="toc-number">3.</span> <span class="toc-text">stage2 给关键帧打上tag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stage3-%E8%BF%9B%E5%85%A5%E5%9B%BE%E7%94%9F%E5%9B%BE"><span class="toc-number">4.</span> <span class="toc-text">stage3 进入图生图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stage4-%E6%89%B9%E9%87%8F%E6%94%BE%E5%A4%A7%E5%9B%BE%E7%89%87"><span class="toc-number">5.</span> <span class="toc-text">stage4 批量放大图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stage5-%E7%82%B9%E5%87%BB%E7%94%9F%E6%88%90ebs%E6%96%87%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">stage5 点击生成ebs文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stage7-%E7%82%B9%E5%87%BB%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91"><span class="toc-number">7.</span> <span class="toc-text">stage7 点击生成视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stage8-%E6%9B%BF%E6%8D%A2%E8%A7%86%E9%A2%91%E8%83%8C%E6%99%AF"><span class="toc-number">8.</span> <span class="toc-text">stage8 替换视频背景</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86"><span class="toc-number"></span> <span class="toc-text">知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E6%A0%B7%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">采样器</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MMD流程迭代 | Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/mybg3.png');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.1.1"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>MMD流程迭代</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-08-03T09:10:46.894Z" id="date"> 2025-08-03</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-08-04T09:32:19.929Z" id="updated"> 2025-08-04</time></div></span><br><span>文章总字数: <div class="control">2.3k</div></span><br><span>预计阅读时间: <div class="control">8 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>随着各种MMD工具的更新，插件的出现，制作MMD有了更多选择。<br>比如从传统的MikuMikuDance到Blender、Unity和Unreal Engine等专业3D软件。</p>
+<h1 id="难点和问题"><a href="#难点和问题" class="headerlink" title="难点和问题"></a>难点和问题</h1><p>最大的问题其实是数据格式，在MMD软件中，模型文件是pmx格式，而动作和相机数据都是vmd。</p>
+<p>PMX作为MMD模型的专有格式，虽然在MMD生态系统中被广泛支持，但在其他3D软件中却面临诸多问题：</p>
+<ul>
+<li>​<strong>材质系统差异</strong>​：PMX的材质表达与主流PBR材质工作流不兼容</li>
+<li>​<strong>骨骼权重限制</strong>​：某些复杂蒙皮效果在其他引擎中难以完美重现</li>
+<li>​<strong>物理系统</strong>​：MMD特有的物理模拟在其他平台需要重新实现</li>
+</ul>
+<p>VMD格式虽然小巧高效，但也存在跨平台问题：</p>
+<ul>
+<li>​<strong>时间轴精度</strong>​：不同软件对帧率的处理方式不同</li>
+<li>​<strong>曲线插值</strong>​：动作曲线在不同引擎中的表现可能不一致</li>
+<li>​<strong>相机动画</strong>​：MMD相机参数与其他3D软件的映射问题</li>
+</ul>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ol>
+<li>​<strong>PMX转通用格式</strong>​：<ul>
+<li>使用Blender的MMD Tools插件转换为fbx&#x2F;gltf</li>
+<li>CATS插件提供的优化和重定向功能</li>
+</ul>
+</li>
+<li>​<strong>VMD动作处理</strong>​：<ul>
+<li>MMD4Mecanim等Unity插件提供的重定向解决方案</li>
+<li>在Blender中烘焙到一个物体</li>
+</ul>
+</li>
+<li>​<strong>VMD相机运动处理</strong>​：<ul>
+<li>使用MMD Tools导入VMD相机数据，会生成一个带有关键帧的空对象和MMD相机，将它烘焙并到处</li>
+</ul>
+</li>
+</ol>
+<h1 id="新MMD流程"><a href="#新MMD流程" class="headerlink" title="新MMD流程"></a>新MMD流程</h1><h2 id="Blender"><a href="#Blender" class="headerlink" title="Blender"></a>Blender</h2><ul>
+<li>在Blender上我们可以用<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jQrSY2EwQ/">鸣潮二创也能如此简单🤨？！！【鸣潮二创教程&#x2F;偏新手】哔哩哔哩_bilibili</a>这篇教程提供的整合包。（由于鸣潮二创也基本上就是MMD制作的流程，所以这篇教程大概够了。</li>
+</ul>
+<p>我再精简一下这个视频的内容：</p>
+<ul>
+<li>下载好这个定制版blender之后，导入启用三个插件<ul>
+<li>mmd-tool</li>
+<li>Miku_Miku_Rig2.0 (AAAMi)</li>
+<li>mmr补充4.1 (鬼离果)</li>
+</ul>
+</li>
+<li>然后进行简单的设置（为了适应预设效果）<ul>
+<li>使用合成器</li>
+<li>打开后处理</li>
+<li>修改色彩方案</li>
+<li>视图降噪关了</li>
+</ul>
+</li>
+<li>然后追加内容，先导入NodeTree里的Bloom，再导入Collections的模型<ul>
+<li>用mmd-tool处理</li>
+<li>合成器里面加入Bloom节点</li>
+<li>用MMR生成控制器</li>
+<li>用MMR补充插件删除多余部分</li>
+</ul>
+</li>
+<li>然后去时间轴用i插入关键帧k动画或者mmd-tool导入动画</li>
+<li>mmd-tool生成物理以及烘焙物理</li>
+<li>可以调整内容<ul>
+<li>修改边缘光光照颜色和强度</li>
+<li>显示修改器效果</li>
+<li>帧率和关键帧距离都放大</li>
+</ul>
+</li>
+</ul>
+<h2 id="Unity"><a href="#Unity" class="headerlink" title="Unity"></a>Unity</h2><h3 id="依赖Blender"><a href="#依赖Blender" class="headerlink" title="依赖Blender"></a>依赖Blender</h3><p>先在Blender导出FBX格式的数据：</p>
+<ol>
+<li>选择要导出的模型和骨骼系统</li>
+<li>点击”文件”-&gt;”导出”-&gt;”FBX”</li>
+<li>在导出设置中配置以下关键选项：<ul>
+<li>勾选”仅导出选中对象”</li>
+<li>包含物体类型选择”Mesh”和”Armature”</li>
+<li>几何数据中确保包含法线和UV</li>
+<li>如果包含动画，勾选”烘焙动画”</li>
+</ul>
+</li>
+<li>将FBX文件和贴图拖入Unity项目Assets文件夹</li>
+<li>选中FBX文件，在Inspector中进行以下设置：<ul>
+<li>动画类型设置为”Humanoid”（人形骨骼）</li>
+<li>配置骨骼映射关系</li>
+<li>设置材质和贴图</li>
+</ul>
+</li>
+</ol>
+<p>PS： 以上操作其实一般不用于Unity，因为Unity的动作模型动作导入用MMD4UnityTools插件更加便捷和准确，Blender导出镜头部分则主要在Unreal那边统一讲解。</p>
+<h3 id="不依赖Blender"><a href="#不依赖Blender" class="headerlink" title="不依赖Blender"></a>不依赖Blender</h3><p>主要使用MMD4UnityTools工具集，安装插件后将需要转化的文件拖入到资源文件夹即可进行进一步操作。<br>我之前也编写过一个 自动取出主贴图来适应Unity新渲染管线的插件</p>
+<h2 id="Unreal"><a href="#Unreal" class="headerlink" title="Unreal"></a>Unreal</h2><h3 id="依赖Blender-1"><a href="#依赖Blender-1" class="headerlink" title="依赖Blender"></a>依赖Blender</h3><blockquote>
+<p>同样有使用Blender和不使用Blender的方法，使用的话和Unity类似，但是要注意单位和导出的问题</p>
+</blockquote>
+<h4 id="模型部分"><a href="#模型部分" class="headerlink" title="模型部分"></a>模型部分</h4><ul>
+<li>Blender<ul>
+<li>安装MMD Tools插件</li>
+<li>把帧率改一下，缩放单位改为0.01</li>
+<li>MMD Tools导入PMX并把缩放改为8 （如果要保持和VRM4U导入骨骼一致用兼容骨架，可以取消勾选将骨骼重命名，兼容骨架需要手动在虚幻骨架窗口中 window -&gt; asset detail 来打开资产详情）</li>
+<li>不选中rigidbody和joints层级，仅导出可见项，记得骨骼可见（VRM4U导出的不包含rigidbody，从mesh开始的，所以可以只选中这一层级）</li>
+<li>按照UE骨骼标准调整骨骼父级关系</li>
+<li>同时选中模型和骨骼导出为FBX</li>
+<li>路径模式选择”复制”并内嵌纹理（如果还是没有贴图，那就取消自动打包资源再试试。。如果还不行，可能是shader节点不支持FBX，比如没有用BSDF，可以选中mesh然后点击convert to blender）</li>
+<li>设置平滑选择为面</li>
+<li>取消勾选”添加叶骨”</li>
+</ul>
+</li>
+<li>UE<ul>
+<li>提前创建masked类型材质并用变量赋予有rbga的black贴图，rgb a分别连到颜色和透明度及mask</li>
+<li>导入时勾选高级里的Vertex Attributes</li>
+<li>选择法线和切线</li>
+<li>选择实例化材质，并且赋予base texture给基础和不透明度</li>
+</ul>
+</li>
+</ul>
+<h4 id="动作部分"><a href="#动作部分" class="headerlink" title="动作部分"></a>动作部分</h4><ul>
+<li><em>需要接着人物部分操作</em></li>
+<li>选中角色骨骼导入动作，缩放改为8</li>
+<li>将动作赋予给人物后，可以启用物理和烘焙，导出的时候只选择骨骼和烘焙动画，如果需要表情，需要导出网格体</li>
+</ul>
+<h4 id="相机部分"><a href="#相机部分" class="headerlink" title="相机部分"></a>相机部分</h4><ul>
+<li>Blender<ul>
+<li>单位改为0.01，选中相机，导入相机动作缩放为8</li>
+<li>导出.usdc （通用场景描述）</li>
+<li>勾选动画以及注意使用英文路径和名称</li>
+</ul>
+</li>
+<li>UE<ul>
+<li>启用USD导入插件</li>
+<li>角色设置到原点</li>
+<li>file -&gt; import into level 导入 usdc文件</li>
+<li>找到资源视图里的关卡序列，并添加Camera Cut Track 选择为 Camera</li>
+<li>然后把角色和动作导入进去</li>
+<li>播放</li>
+</ul>
+</li>
+</ul>
+<h3 id="不依赖Blender-1"><a href="#不依赖Blender-1" class="headerlink" title="不依赖Blender"></a>不依赖Blender</h3><blockquote>
+<p>启用插件后要在项目设置里面拉高他们的导入优先权</p>
+</blockquote>
+<p>使用VRM4U插件导入PMX：</p>
+<ul>
+<li>材质类型选择MToon Unlit</li>
+<li>scale 0.08</li>
+<li>生成描边</li>
+<li>勾选部分Optimize选项</li>
+<li>如果要启用描边，导入后把 Plugins&#x2F;VRM4U Content&#x2F;Util&#x2F;Actor&#x2F;MToonAttachActor 拖到人物位置，并且在细节面板选择人物。要改参数可以去人物AssetList里面找Outline材质</li>
+</ul>
+<p>使用IVP5U导入VMD：<br>有可能出现重定向问题，可以重新设置重定向animation，不建议</p>
+<h2 id="启用物理"><a href="#启用物理" class="headerlink" title="启用物理"></a>启用物理</h2><blockquote>
+<p>主要分为从Blender，Unity，UE三个方面</p>
+</blockquote>
+<ul>
+<li><p>Blender中用mmd-tool，注意要在人物移动到开始跳舞的位置再点击物理，然后再点击烘焙，通知注意播放模式是播放每一帧（这是因为Blender的物理计算是依靠刚体，从第一帧开始顺序计算的，不是实时模拟）</p>
+</li>
+<li><p>以下内容为Blender物理指南，作者<a target="_blank" rel="noopener" href="https://space.bilibili.com/32690910">MiaoBox</a><br>  1.开启物理<br>  2.开启物理后有两个参数，一般用默认的就行<br>  3.游标拖到0帧（一般第1帧也行）<br>  4.点下<strong>更新世界</strong>，改子步数：1，迭代：60<br>  5.设置下结束帧，设置多长物理就烘培到哪，如果不小心烘焙太长，按esc取消<br>  6.看下是不是在“播放每帧”，烘培需要每帧<br>  7.烘培，完成</p>
+<p>  雷区1：没有烘培好就去拖动关键帧<br>  雷区2：动作幅度太大<br>  雷区3：烘培的起始帧不是0或1</p>
+<p>  建议1：<br>  遇到模型物理一直错误，可能模型的问题，换模型试<br>  建议2：<br>  第一帧静止姿态，这也是为什么导入的动作第一帧是静止的，隔几帧之后才是动作开始</p>
+</li>
+<li><p>Unity中就是用Magica插件啥的，具体有点忘了</p>
+</li>
+<li><p>UE用Kawaii插件</p>
+</li>
+</ul>
+<h2 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h2><p>启用插件movie render queue就可以在sequencer上找到渲染视频的按钮，可以增加几个设置选项，比如输出改为PNG。<br>导出后的图片序列可以用AE进行处理。</p>
+<h2 id="解惑"><a href="#解惑" class="headerlink" title="解惑"></a>解惑</h2><blockquote>
+<p>为什么要改变缩放单位，导入时还要进行缩放？</p>
+</blockquote>
+<ul>
+<li>改变单位，是为了方便导出到其他软件</li>
+<li>因为软件只认数值而不认单位</li>
+<li>Blender使用的是m，而UE使用的是cm</li>
+<li>所以缩放改为0.01即可</li>
+<li>导入模型要放大100倍是为了适应现在缩放后的单位</li>
+<li>否则角色导入进去就太小了</li>
+</ul>
+<blockquote>
+<p>为什么要将路径改为复制并内嵌材质，材质转为Blender？</p>
+</blockquote>
+<ul>
+<li>路径改为复制是为了让材质贴图在其他机器其他路径也能显示</li>
+<li>内嵌材质是因为fbx格式模型可以内嵌材质（如果是obj格式就得关闭自动打包资源，改为手动解包，因为blender格式可以内嵌资源，而obj格式不行）</li>
+<li>材质转为blender的BSDF才能适配fbx导出时的材质数据，否则一些奇奇怪怪只有blender有的高级功能节点，无法自动转化为fbx的材质，就会导致丢失材质</li>
+</ul>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/08/03/Tech/MMD/MMD%E5%88%B6%E4%BD%9C%E6%B5%81%E7%A8%8B/">← 下一篇 MMD制作流程</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/08/02/Tech/%E4%BB%8EUnity%E5%88%B0UE%E7%9A%84%E6%97%A9%E6%9C%9F%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">从Unity到UE的早期经验总结 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9%E5%92%8C%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">难点和问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0MMD%E6%B5%81%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">新MMD流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Blender"><span class="toc-number">4.1.</span> <span class="toc-text">Blender</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unity"><span class="toc-number">4.2.</span> <span class="toc-text">Unity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96Blender"><span class="toc-number">4.2.1.</span> <span class="toc-text">依赖Blender</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%BE%9D%E8%B5%96Blender"><span class="toc-number">4.2.2.</span> <span class="toc-text">不依赖Blender</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unreal"><span class="toc-number">4.3.</span> <span class="toc-text">Unreal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96Blender-1"><span class="toc-number">4.3.1.</span> <span class="toc-text">依赖Blender</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E9%83%A8%E5%88%86"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">模型部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E4%BD%9C%E9%83%A8%E5%88%86"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">动作部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E6%9C%BA%E9%83%A8%E5%88%86"><span class="toc-number">4.3.1.3.</span> <span class="toc-text">相机部分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%BE%9D%E8%B5%96Blender-1"><span class="toc-number">4.3.2.</span> <span class="toc-text">不依赖Blender</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E7%89%A9%E7%90%86"><span class="toc-number">4.4.</span> <span class="toc-text">启用物理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">4.5.</span> <span class="toc-text">输出结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%83%91"><span class="toc-number">4.6.</span> <span class="toc-text">解惑</span></a></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
