@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>算法深度理解解析 | Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/mybg3.png');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>算法深度理解解析</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-11-22T00:59:59.849Z" id="date"> 2025-11-22</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-11-22T01:07:41.977Z" id="updated"> 2025-11-22</time></div></span><br><span>文章总字数: <div class="control">3.2k</div></span><br><span>预计阅读时间: <div class="control">12 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="数组双指针"><a href="#数组双指针" class="headerlink" title="数组双指针"></a>数组双指针</h1><h2 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h2><pre><code>看到「最大化最小值」或者「最小化最大值」就要想到 二分
+</code></pre>
+<ul>
+<li>使用左开右闭</li>
+<li>如果mid偏大就要让right过来，mid偏小，让left过来</li>
+<li>要找最哪边的就把哪边固定住</li>
+<li>最后那个在相等时不变的量才可能是答案</li>
+</ul>
+<h3 id="统一写法"><a href="#统一写法" class="headerlink" title="统一写法"></a>统一写法</h3><pre><code>统一使用c++的lower_bound upper_bound的实现方式
+lower_bound 加上一个判断是不是相等，就可以当成是count
+采用[left, right)
+返回left
+</code></pre>
+<p>lower_bound找到最小插入位置，即第一个大于等于target的位置<br>upper_bound找到最后一个插入位置，即第一个大于target的位置</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">lower_bound</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>	<span class="hljs-type">int</span> left = <span class="hljs-number">0</span>, right = nums.<span class="hljs-built_in">size</span>();<br>	<span class="hljs-keyword">while</span>(left &lt; right)&#123;<br>		<span class="hljs-type">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>		<span class="hljs-keyword">if</span>(nums[mid] &lt; target) &#123;<br>			left = mid + <span class="hljs-number">1</span>;<br>		&#125; <span class="hljs-keyword">else</span> &#123;<br>			right = mid;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> left;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">upper_bound</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>	<span class="hljs-type">int</span> left = <span class="hljs-number">0</span>, right = nums.<span class="hljs-built_in">size</span>();<br>	<span class="hljs-keyword">while</span>(left &lt; right) &#123;<br>		<span class="hljs-type">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>		<span class="hljs-keyword">if</span> (nums[mid] &lt;= target) &#123;<br>			left = mid + <span class="hljs-number">1</span>;<br>		&#125; <span class="hljs-keyword">else</span> &#123;<br>			right = mid;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> left;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>不需要数组是否为空的处理</li>
+<li>lower_bound的返回如果是0的话，说明数组找到了第一个数字</li>
+<li>upper_bound的返回如果是0的话，说明数组中所有数字都比target大</li>
+<li>lower&#x2F;upper_bound返回如果是size()的话，说明所有数字都比target小</li>
+</ul>
+<h3 id="题目集"><a href="#题目集" class="headerlink" title="题目集"></a>题目集</h3><ul>
+<li>可以看看 D:&#x2F;1work&#x2F;算法题</li>
+<li><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805342720868352/exam/problems/type/7?problemSetProblemId=994805507225665536&page=0">1010 Radix - PAT (Advanced Level) Practice (pintia.cn)</a></li>
+</ul>
+<h3 id="思路难题"><a href="#思路难题" class="headerlink" title="思路难题"></a>思路难题</h3><ul>
+<li>求一个有序数组中某一个数字的出现数量，可以通过right_bound - left_bound来实现</li>
+<li>二维矩阵中有行列的增减关系但是他们之间没关系，就找到一个角落，他的行进方向两个分别让值增加，减少，来调整方向找到值</li>
+<li>求x!末尾的0的个数，即里面有多少5，就有d&#x2F;5个加进去<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">long</span> res = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">long</span> d = x; d / <span class="hljs-number">5</span> &gt; <span class="hljs-number">0</span>; d = d / <span class="hljs-number">5</span>) &#123;<br>    res += d / <span class="hljs-number">5</span>;<br>&#125;<br><span class="hljs-keyword">return</span> res;<br></code></pre></td></tr></table></figure></li>
+<li>山脉数组找封顶，找到中点处的两个值，确定峰顶所在方向，最后比一下left和left+1，看谁是顶峰</li>
+<li>1201.丑数 需要设计一个函数来求解某个数字以内有多少个丑数，需要用集合运算</li>
+</ul>
+<p>常数时间删除查找元素需要用hashset，为了可以对紧凑数组进行指定元素快速删除，就要用一个hashmap来存储每个元素对应的索引</p>
+<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><pre><code>使用一个unordered_map来实现对元素数量的控制
+</code></pre>
+<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><p>一个while循环 right &lt; size<br>进入之后先把right的单词取出然后更新<br>一个while来让窗口符合要求</p>
+<h3 id="思路难题-1"><a href="#思路难题-1" class="headerlink" title="思路难题"></a>思路难题</h3><ul>
+<li>438.找到异位词，即只有顺序不一样的序列<ul>
+<li>需要记录一个need的map然后根据数量匹配找出valid的个数</li>
+</ul>
+</li>
+</ul>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><pre><code>可以是快慢指针，用于整理元素和删除元素
+可以是两边指针，用于夹逼目标，和随机整理元素
+</code></pre>
+<p><strong>链表</strong>的题通常需要注意两点：</p>
+<ol>
+<li>舍得用变量，千万别想着节省变量，否则容易被逻辑绕晕</li>
+<li>head 有可能需要改动时，先增加一个 假head，返回的时候直接取 假head.next，这样就不需要为修改 head 增加一大堆逻辑了。</li>
+<li>拆分和合并操作不要舍不得</li>
+</ol>
+<p>矩阵的题</p>
+<ul>
+<li>从一维视角来看</li>
+</ul>
+<h2 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h2><ul>
+<li>移动的时候判断fast和fast-&gt;next是不是存在</li>
+<li>通过快慢指针判断环</li>
+<li>到达一个地方的时候&#x3D;&#x3D;让其中一个回到起点&#x3D;&#x3D;速度再相同到下一次相遇就是环的位置</li>
+<li>判断相交链表，走完自己的路之后再去走对方的路，路途会不会重叠</li>
+</ul>
+<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><ul>
+<li><p>尽量使用0作为preSum开头的值，这样可以方便计算</p>
+</li>
+<li><p><strong>善用max来作为step函数削掉一些不合理的索引</strong></p>
+</li>
+<li><p>前缀和的作用可以是一个统计作用</p>
+</li>
+<li><p>可以和hash结合来找到某一个值所在的索引</p>
+</li>
+<li><p>区间信息快速获取-&gt; 前缀和</p>
+</li>
+<li><p>区间快速操作（一个操作影响整个区间） -&gt; 差分数组</p>
+</li>
+</ul>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>自顶向下的动态规划，实际上就是有备忘录的遍历~<br>所以有时候可以尝试遍历的写法框架，但是加上备忘录来剪枝。</p>
+<h2 id="动态规划套路"><a href="#动态规划套路" class="headerlink" title="动态规划套路"></a>动态规划套路</h2><p>分析套路：</p>
+<ul>
+<li>集合（问题规模的表示方式，可能是状态压缩，状态机，坐标等等，他们虽然表面上是几个值，但是代表了一个集合）</li>
+<li>最后一步（看最后一步（当前要更新的状态）是由哪些集合导出的，不一定前一步就够，所以要不断划分）</li>
+<li>确定转移方程<br>书写套路：</li>
+<li>确定一下dp数组的大小，根据含义来确定</li>
+<li>对dp数组进行初始化</li>
+<li>根据状态转移方程进行代码书写，也就是根据不同的条件来给出不同的转化</li>
+<li>如何压缩？<ul>
+<li>可以通过将i和1进行&amp;操作使得某一维的大小只为2</li>
+</ul>
+</li>
+</ul>
+<h2 id="难题思路"><a href="#难题思路" class="headerlink" title="难题思路"></a>难题思路</h2><ul>
+<li>信封套娃问题：dp[i]表示长度为i的最长上升子序列末尾元素的最小值，所以我们取到的元素如果比最后一个小的话，优先接在dp的末尾，其他就放到他应该插入的left_bound位置</li>
+<li>打家劫舍问题：如果从左到右和从右到左的方式都差不多，而在条件最开始需要垫上几个，那最好就从右向左</li>
+<li>注意传入的参数是不是合理的，比如right是不是小于left</li>
+</ul>
+<h1 id="善用数据结构"><a href="#善用数据结构" class="headerlink" title="善用数据结构"></a>善用数据结构</h1><h2 id="有序的哈希表LRU"><a href="#有序的哈希表LRU" class="headerlink" title="有序的哈希表LRU"></a>有序的哈希表LRU</h2><p> 146题，多熟悉<br> 239题，单调队列</p>
+<h2 id="随机翻转矩阵"><a href="#随机翻转矩阵" class="headerlink" title="随机翻转矩阵"></a>随机翻转矩阵</h2><ul>
+<li>矩阵太大，不能真的存储，其实也不需要那么多的值来存储</li>
+<li>使用hashmap存储那些被访问的，同时让他们关联一个存在矩阵末尾的值，这样就能只通过一次转换得到存在的值</li>
+</ul>
+<h2 id="二叉树迭代器"><a href="#二叉树迭代器" class="headerlink" title="二叉树迭代器"></a>二叉树迭代器</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">BSTIterator</span> &#123;<br>    stack&lt;TreeNode*&gt; stk;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">BSTIterator</span>(TreeNode* root) &#123;<br>        <span class="hljs-built_in">push_left_branch</span>(root);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">push_left_branch</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        <span class="hljs-keyword">while</span>(root)&#123;<br>            stk.<span class="hljs-built_in">push</span>(root);<br>            root = root-&gt;left;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">cur</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> stk.<span class="hljs-built_in">top</span>()-&gt;val;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">next</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">auto</span> res_node = stk.<span class="hljs-built_in">top</span>();<br>        stk.<span class="hljs-built_in">pop</span>();<br>        <span class="hljs-built_in">push_left_branch</span>(res_node-&gt;right);<br>        <span class="hljs-keyword">return</span> res_node-&gt;val;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">hasNext</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> !stk.<span class="hljs-built_in">empty</span>();<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><pre><code>要么遍历，要么分治
+</code></pre>
+<h2 id="二叉树的还原"><a href="#二叉树的还原" class="headerlink" title="二叉树的还原"></a>二叉树的还原</h2><pre><code>通过前序中序，或者后序中序遍历结果可以确定⼀棵原始⼆叉树，但是通过前序后序遍历结果⽆法确定原始⼆叉树
+</code></pre>
+<ul>
+<li><p>从前序遍历和中序遍历还原二叉树</p>
+<ul>
+<li>保证没有 <strong>重复元素</strong></li>
+<li>需要快速分开左右子树然后使用build函数分别建立，之后合并</li>
+<li>使用一个hash表来快速找到中序遍历中的根，这样可以知道左右子树的位置<br>关键是中序遍历，可以根据中序遍历来拆分子问题，需要给出每一次的根值和左右边界。知道根的位置就知道了左右子树的大小。</li>
+</ul>
+</li>
+<li><p>从前后遍历还原二叉树</p>
+<ul>
+<li>需要指定左子树的根为先序遍历第二个</li>
+</ul>
+</li>
+</ul>
+<h2 id="BFS问题"><a href="#BFS问题" class="headerlink" title="BFS问题"></a>BFS问题</h2><pre><code>维护一个vis数组，一个dist数组（可选），一个深度变量
+一定记得在访问还有加入元素的时候维护他们
+</code></pre>
+<ul>
+<li>使用BFS来寻找最短路径，思路就是让一堆点，或者一个点，向着各个方向都走一边，不需要去的点不要去</li>
+</ul>
+<h2 id="二叉树的数学问题"><a href="#二叉树的数学问题" class="headerlink" title="二叉树的数学问题"></a>二叉树的数学问题</h2><ol>
+<li><strong>满二叉树（Full Binary Tree）</strong>：<ul>
+<li>每个节点都有 0 或 2 个子节点。</li>
+<li>具有 h 层的满二叉树总共有 2^h - 1 个节点。</li>
+<li>在高度为 h 的满二叉树中，最后一层节点的数量总是等于 2^(h-1)</li>
+</ul>
+</li>
+<li><strong>完全二叉树（Complete Binary Tree）</strong>：<ul>
+<li>在完全二叉树中，除了最后一层，其他层的节点都是满的，并且最后一层的节点都尽可能地靠左排列。</li>
+<li>具有 n 个节点的完全二叉树，其高度为 floor(log2(n)) 或 ceil(log2(n))。</li>
+<li>一个具有 n 个节点的完全二叉树的最大高度为 log2(n+1)-1。</li>
+<li>一棵具有 h 层的完全二叉树，至少有 2^(h-1) 个节点，至多有 2^h - 1 个节点。</li>
+</ul>
+</li>
+<li>他们的关系：<ul>
+<li>⼀棵完全⼆叉树的两棵⼦树，⾄少有⼀棵是满⼆叉树</li>
+</ul>
+</li>
+</ol>
+<h2 id="最近公共祖先LCA"><a href="#最近公共祖先LCA" class="headerlink" title="最近公共祖先LCA"></a>最近公共祖先LCA</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 辅助函数，用于递归查找LCA</span><br><span class="hljs-function">TreeNode* <span class="hljs-title">findLCA</span><span class="hljs-params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (!root || root == p || root == q) &#123;<br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>    <br>    TreeNode* left = <span class="hljs-built_in">findLCA</span>(root-&gt;left, p, q);<br>    TreeNode* right = <span class="hljs-built_in">findLCA</span>(root-&gt;right, p, q);<br>    <br>    <span class="hljs-keyword">if</span> (left &amp;&amp; right) &#123;<br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>    <span class="hljs-keyword">return</span> left ? left : right;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>一般二叉树：<br class='item-img' data-src='/2024/03/24/hello-world/%E7%90%86%E8%A7%A3%E8%A7%A3%E6%9E%90/file-20251122090740121.png'><img src="/2024/03/24/hello-world/%E7%90%86%E8%A7%A3%E8%A7%A3%E6%9E%90/file-20251122090740121.png"></p>
+<ul>
+<li>从根节点开始递归遍历整棵树。</li>
+<li>当遇到当前节点等于其中一个目标节点时，返回当前节点。</li>
+<li>递归遍历左子树和右子树。</li>
+<li>如果左子树返回非空值，右子树返回非空值，则说明当前节点是最近公共祖先。</li>
+<li>如果左子树返回非空值，右子树返回空值，则左子树返回的节点是最近公共祖先。</li>
+<li>如果右子树返回非空值，左子树返回空值，则右子树返回的节点是最近公共祖先。</li>
+<li>如果左右子树均返回空值，则说明当前节点不是最近公共祖先，返回空值。</li>
+</ul>
+<p>二叉搜索树：</p>
+<ul>
+<li>找到第一个分叉点</li>
+</ul>
+<h2 id="二叉搜索树操作"><a href="#二叉搜索树操作" class="headerlink" title="二叉搜索树操作"></a>二叉搜索树操作</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247488128&idx=2&sn=b8fb3fd2917f9ac86127054741cd5877&chksm=9bd7ec88aca0659ee0185b657663169169493e9df2063fa4d28b38a0b4d0dd698d0301937898&scene=21#wechat_redirect">原创 | 手把手刷二叉搜索树（第二期） (qq.com)</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/RST4Cujs0V0yiwRyu1fxCQ">美团面试官：你对二叉树后续遍历一无所知 (qq.com)</a></p>
+<p>前序遍历做的是就是考虑当前节点需要做什么，信息是从上往下传递的（比如通过参数传递引用）。<br>从上往下传递举例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">/* 限定以 root 为根的子树节点必须满足 max.val &gt; root.val &gt; min.val */</span>  <br><span class="hljs-function">boolean <span class="hljs-title">isValidBST</span><span class="hljs-params">(TreeNode root, TreeNode min, TreeNode max)</span> </span>&#123;  <br>    <span class="hljs-comment">// base case  </span><br>    <span class="hljs-keyword">if</span> (root == null) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;  <br>    <span class="hljs-comment">// 若 root.val 不符合 max 和 min 的限制，说明不是合法 BST  </span><br>    <span class="hljs-keyword">if</span> (min != null &amp;&amp; root.val &lt;= min.val) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <br>    <span class="hljs-keyword">if</span> (max != null &amp;&amp; root.val &gt;= max.val) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <br>    <span class="hljs-comment">// 限定左子树的最大值是 root.val，右子树的最小值是 root.val  </span><br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">isValidBST</span>(root.left, min, root)   <br>        &amp;&amp; <span class="hljs-built_in">isValidBST</span>(root.right, root, max);  <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>而后序遍历可以将信息通过返回值传递，类似于分治</p>
+<p>这两个思维可以混合使用，从上往下传递信息，从下往上综合信息<br>此外扩展思维↓，也可以加上，就是用全局变量来保存过程信息<br class='item-img' data-src='/2024/03/24/hello-world/%E7%90%86%E8%A7%A3%E8%A7%A3%E6%9E%90/file-20251122090636477.png'><img src="/2024/03/24/hello-world/%E7%90%86%E8%A7%A3%E8%A7%A3%E6%9E%90/file-20251122090636477.png"></p>
+<h2 id="序列化和反序列化神级代码"><a href="#序列化和反序列化神级代码" class="headerlink" title="序列化和反序列化神级代码"></a>序列化和反序列化神级代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Codec</span> &#123;<br><span class="hljs-keyword">public</span>:<br><br>    <span class="hljs-comment">// Encodes a tree to a single string.</span><br>    <span class="hljs-function">string <span class="hljs-title">serialize</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(root==<span class="hljs-literal">nullptr</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;#&quot;</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">to_string</span>(root-&gt;val) + <span class="hljs-string">&#x27; &#x27;</span> + <span class="hljs-built_in">serialize</span>(root-&gt;left) + <span class="hljs-string">&#x27; &#x27;</span> + <span class="hljs-built_in">serialize</span>(root-&gt;right);<br>    &#125;<br><br>    <span class="hljs-function">TreeNode* <span class="hljs-title">mydeserialize</span><span class="hljs-params">(istringstream &amp;ss )</span></span>&#123;<br>        string tmp;<br>        ss&gt;&gt;tmp;<br>        <span class="hljs-keyword">if</span>(tmp==<span class="hljs-string">&quot;#&quot;</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;<br>        &#125;<br>        TreeNode* node = <span class="hljs-keyword">new</span> <span class="hljs-built_in">TreeNode</span>(<span class="hljs-built_in">stoi</span>(tmp));<br>        node-&gt;left = <span class="hljs-built_in">mydeserialize</span>(ss);<br>        node-&gt;right = <span class="hljs-built_in">mydeserialize</span>(ss);<br>        <span class="hljs-keyword">return</span> node;<br>    &#125;<br><br>    <span class="hljs-comment">// Decodes your encoded data to tree.</span><br>    <span class="hljs-function">TreeNode* <span class="hljs-title">deserialize</span><span class="hljs-params">(string data)</span> </span>&#123;<br>        <span class="hljs-function">istringstream <span class="hljs-title">ss</span><span class="hljs-params">(data)</span></span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">mydeserialize</span>(ss);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>图和树的区别是：树对于入度出度有明确限制，图可以有环</p>
+<h2 id="遍历里面经典的traverse到底是什么"><a href="#遍历里面经典的traverse到底是什么" class="headerlink" title="遍历里面经典的traverse到底是什么"></a>遍历里面经典的traverse到底是什么</h2><pre><code>traverse本身就是一个遍历
+你可以在他里面给他传递信息
+可以让他返回信息
+可以在他里面进行答案的保存与修改
+可以是二叉树的，可以是图
+</code></pre>
+<h2 id="回溯套路"><a href="#回溯套路" class="headerlink" title="回溯套路"></a>回溯套路</h2><p>套路：</p>
+<ul>
+<li>可以把一些变量设置为全局的，比如路径，结果，一些需要记录的与目标和限制相关的东西</li>
+<li>在进入backtrack的时候需要判断一下是不是可以返回</li>
+<li>使用一个for循环来进入不同的子分支，记得在离开子分支的时候将之前的改动还原</li>
+</ul>
+<p>注意点：如果有信息需要传递给子分支而又跟子分支的后续循环有关，在后续循环过程中要不变，那就通过变量传递下去</p>
+<h2 id="地图题"><a href="#地图题" class="headerlink" title="地图题"></a>地图题</h2><pre><code>例如海岛，迷宫这些可以用dfs或者bfs都可以目的是为了找到目的地
+而bfs可以同时找到最少需要的步数
+</code></pre>
+<h1 id="好题"><a href="#好题" class="headerlink" title="好题"></a>好题</h1><h2 id="对经典算法扩展以求值"><a href="#对经典算法扩展以求值" class="headerlink" title="对经典算法扩展以求值"></a>对经典算法扩展以求值</h2><p>未排序的数组中找元素位置，找元素某一侧【315】</p>
+<p>二叉树直径问题，对求深度问题进行扩展，每一次都求一下路径长度来max<br>还有类似的，就是说求的东西可以是最终答案的子集，然后答案在中途维护</p>
+<p>第四题 寻找两个数组的中位数，这个需要有一个技巧，根据分出的中间的左右元素进行不同的操作，没啥框架，主要是二分</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/11/22/Tech/%E7%AE%97%E6%B3%95/PAT&amp;CSP&amp;%E8%93%9D%E6%A1%A5%E6%9D%AF/">← 下一篇 PAT&amp;CSP&amp;蓝桥杯</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/11/22/Tech/%E7%AE%97%E6%B3%95/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E8%83%8C%E8%AF%B5/">经典算法背诵 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-number">1.</span> <span class="toc-text">数组双指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2"><span class="toc-number">1.1.</span> <span class="toc-text">二分搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E5%86%99%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">统一写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%9B%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">题目集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E9%9A%BE%E9%A2%98"><span class="toc-number">1.1.4.</span> <span class="toc-text">思路难题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-number">1.2.</span> <span class="toc-text">滑动窗口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text">框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E9%9A%BE%E9%A2%98-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">思路难题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-number">1.3.</span> <span class="toc-text">双指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8"><span class="toc-number">1.4.</span> <span class="toc-text">环形链表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C"><span class="toc-number">1.5.</span> <span class="toc-text">前缀和</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">2.</span> <span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%A5%97%E8%B7%AF"><span class="toc-number">2.1.</span> <span class="toc-text">动态规划套路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%BE%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">难题思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%96%84%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">善用数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E7%9A%84%E5%93%88%E5%B8%8C%E8%A1%A8LRU"><span class="toc-number">3.1.</span> <span class="toc-text">有序的哈希表LRU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E7%BF%BB%E8%BD%AC%E7%9F%A9%E9%98%B5"><span class="toc-number">3.2.</span> <span class="toc-text">随机翻转矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">二叉树迭代器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">4.</span> <span class="toc-text">二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BF%98%E5%8E%9F"><span class="toc-number">4.1.</span> <span class="toc-text">二叉树的还原</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFS%E9%97%AE%E9%A2%98"><span class="toc-number">4.2.</span> <span class="toc-text">BFS问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98"><span class="toc-number">4.3.</span> <span class="toc-text">二叉树的数学问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88LCA"><span class="toc-number">4.4.</span> <span class="toc-text">最近公共祖先LCA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C"><span class="toc-number">4.5.</span> <span class="toc-text">二叉搜索树操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%A5%9E%E7%BA%A7%E4%BB%A3%E7%A0%81"><span class="toc-number">4.6.</span> <span class="toc-text">序列化和反序列化神级代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E9%87%8C%E9%9D%A2%E7%BB%8F%E5%85%B8%E7%9A%84traverse%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">5.1.</span> <span class="toc-text">遍历里面经典的traverse到底是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF%E5%A5%97%E8%B7%AF"><span class="toc-number">5.2.</span> <span class="toc-text">回溯套路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E9%A2%98"><span class="toc-number">5.3.</span> <span class="toc-text">地图题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A5%BD%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">好题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%89%A9%E5%B1%95%E4%BB%A5%E6%B1%82%E5%80%BC"><span class="toc-number">6.1.</span> <span class="toc-text">对经典算法扩展以求值</span></a></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
