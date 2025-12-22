@@ -78,7 +78,61 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
  const script = document.createElement('script');
  script.src = 'https://vercount.one/js';
  document.head.appendChild(script);
-});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>PAT&amp;CSP&amp;蓝桥杯</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-11-22T01:01:33.502Z" id="date"> 2025-11-22</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-11-22T01:05:45.362Z" id="updated"> 2025-11-22</time></div></span><br><span>文章总字数: <div class="control">1.4k</div></span><br><span>预计阅读时间: <div class="control">5 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><ul>
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>PAT&amp;CSP&amp;蓝桥杯</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-11-22T01:01:33.502Z" id="date"> 2025-11-22</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-12-01T06:22:07.057Z" id="updated"> 2025-12-01</time></div></span><br><span>文章总字数: <div class="control">1.5k</div></span><br><span>预计阅读时间: <div class="control">5 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><table>
+<thead>
+<tr>
+<th>数据规模 (n)</th>
+<th>可接受的时间复杂度</th>
+<th>典型算法举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n≤10</td>
+<td>O(n!)</td>
+<td>全排列枚举</td>
+</tr>
+<tr>
+<td>n≤30</td>
+<td>O(2ⁿ)</td>
+<td>深度优先搜索 (DFS) 剪枝、状态压缩动态规划</td>
+</tr>
+<tr>
+<td>n≤500</td>
+<td>O(n³)</td>
+<td>Floyd算法、动态规划</td>
+</tr>
+<tr>
+<td>n≤5000</td>
+<td>O(n²)</td>
+<td>双重循环、动态规划、朴素Dijkstra</td>
+</tr>
+<tr>
+<td>n≤10^5</td>
+<td>**O(n log n)**​</td>
+<td>各种排序、堆、二叉搜索树、线段树、二分查找</td>
+</tr>
+<tr>
+<td>n≤10^6</td>
+<td>O(n) 或 **小常数O(n log n)**​</td>
+<td>单调队列、KMP、并查集（近似线性）</td>
+</tr>
+<tr>
+<td>n≤10^7</td>
+<td>O(n)</td>
+<td>双指针扫描、线性筛素数</td>
+</tr>
+<tr>
+<td>n≤10^9</td>
+<td>O(√n)</td>
+<td>判断质数</td>
+</tr>
+<tr>
+<td>n≤10^18</td>
+<td>O(log n)</td>
+<td>最大公约数、快速幂</td>
+</tr>
+</tbody></table>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><ul>
 <li>使用reverse函数传入的是迭代器的头尾，需要include &lt;algorithm&gt;</li>
 <li>使用istringstream要引入 &lt;sstream&gt;</li>
 <li>可以使用to_string方法来把数字转为字符串</li>
@@ -184,4 +238,4 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
 <p>状态压缩DP<br>0表示不向下一格<br>1表示向下一格</p>
 <p class='item-img' data-src='/2024/03/24/hello-world/CSP&%E8%93%9D%E6%A1%A5%E6%9D%AF/file-20251122090543351.png'><img src="/2024/03/24/hello-world/CSP&%E8%93%9D%E6%A1%A5%E6%9D%AF/file-20251122090543351.png"></p>
 <p class='item-img' data-src='/2024/03/24/hello-world/CSP&%E8%93%9D%E6%A1%A5%E6%9D%AF/file-20251122090543370.png'><img src="/2024/03/24/hello-world/CSP&%E8%93%9D%E6%A1%A5%E6%9D%AF/file-20251122090543370.png"></p>
-<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/11/22/Tech/%E7%AE%97%E6%B3%95/C++%E8%AE%B0%E5%BF%86%E7%9F%A5%E8%AF%86%E7%82%B9/">← 下一篇 C++记忆知识点</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/11/22/Tech/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E8%A7%A3%E6%9E%90/">算法深度理解解析 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="toc-number">2.</span> <span class="toc-text">技巧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="toc-number">3.</span> <span class="toc-text">常见错误</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AA%97%E5%88%86%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">骗分方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">5.</span> <span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%93%9D%E6%A1%A5%E6%9D%AF"><span class="toc-number">6.</span> <span class="toc-text">蓝桥杯</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/11/22/Tech/%E7%AE%97%E6%B3%95/C++%E8%AE%B0%E5%BF%86%E7%9F%A5%E8%AF%86%E7%82%B9/">← 下一篇 C++记忆知识点</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/10/22/Project/%E5%A4%A7%E9%BA%A6/">大麦 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="toc-number">3.</span> <span class="toc-text">技巧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="toc-number">4.</span> <span class="toc-text">常见错误</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AA%97%E5%88%86%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">骗分方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text">性能优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%93%9D%E6%A1%A5%E6%9D%AF"><span class="toc-number">7.</span> <span class="toc-text">蓝桥杯</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
