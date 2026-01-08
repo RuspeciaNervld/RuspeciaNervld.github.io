@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>UE学习 | Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/mybg3.png');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>UE学习</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-12-14T06:52:45.181Z" id="date"> 2025-12-14</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2026-01-08T01:52:49.415Z" id="updated"> 2026-01-08</time></div></span><br><span>文章总字数: <div class="control">4.3k</div></span><br><span>预计阅读时间: <div class="control">15 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="常识"><a href="#常识" class="headerlink" title="常识"></a>常识</h1><p>世界坐标对应到纹理UV似乎是按照cm作为单位</p>
+<h2 id="基础单词"><a href="#基础单词" class="headerlink" title="基础单词"></a>基础单词</h2><p>旋转：<br>pitch 点头<br>yaw 摇头<br>roll 滚动<br>contrast 对比度<br>durability 饱和度<br>前方 &#x3D; x轴正方向</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul>
+<li>shift+f1 脱出鼠标</li>
+<li>f8 脱离控制器（debug用）</li>
+<li>end end 让物体贴地</li>
+<li>ctrl + b 找到场景中选中物体的资源的位置</li>
+<li>ctrl + e 打开物体编辑器</li>
+<li>f 到达物体位置处</li>
+<li>蓝图选中节点按c有注释</li>
+<li>按住Alt拖动进行复制</li>
+<li>按住shift移动物体可以让相机跟随</li>
+<li>g显示gizmo</li>
+<li>按住alt点 断开连线</li>
+</ul>
+<h1 id="蓝图"><a href="#蓝图" class="headerlink" title="蓝图"></a>蓝图</h1><h2 id="event"><a href="#event" class="headerlink" title="event"></a>event</h2><p class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214231041.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214231041.png"><br class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214241394.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214241394.png"><br>函数和宏<br class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214257010.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214257010.png"><br class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214316168.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214316168.png"><br>蓝图之间的通信<br class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214331768.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214331768.png"></p>
+<ul>
+<li>蓝图里面如果看不到父类变量 -&gt; 在变量框框的右上角有个设置</li>
+</ul>
+<h1 id="CPP"><a href="#CPP" class="headerlink" title="CPP"></a>CPP</h1><h2 id="官方的命名方式"><a href="#官方的命名方式" class="headerlink" title="官方的命名方式"></a>官方的命名方式</h2><pre><code>A开头表示游戏对象
+U开头表示引擎对象（组件资源等），AActor的祖宗UObject也是U
+E开头表示枚举
+F开头表示基础功能类，例如string vector
+</code></pre>
+<h2 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h2><p>UE中很多函数都是通过<strong>委托</strong>来使用，例如碰撞产生的函数</p>
+<ul>
+<li>委托分为动态（可以与蓝图交互）和静态，添加委托时使用AddDynamic &#x2F; AddUObject</li>
+<li>定义的时候用DECLARE_(DYNAMIC_)MULTICAST_DELEGATE_XXParam</li>
+<li>一般动态的只能take一些简单的参数，如果复杂建议定义UStruct然后再传入</li>
+<li>一些跟引擎深度交互的（可以在蓝图用）的方法，在c++中最好注释UFUNCTION()</li>
+</ul>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><code>UGameInstance</code> 是 Unreal 官方推荐的“单例模式”实现，​<strong>既保留了单例的核心优势（全局唯一访问），又规避了手动管理风险</strong>。应当继承这个类实现单例。</p>
+<h2 id="常用override"><a href="#常用override" class="headerlink" title="常用override"></a>常用override</h2><p>UI里面的开始和结束函数是NativeDestruct(),需要override<br>UI里面如果使用组件需要引入头文件例如：”Components&#x2F;TextBlock.h”</p>
+<h2 id="与Unity不同的是"><a href="#与Unity不同的是" class="headerlink" title="与Unity不同的是"></a>与Unity不同的是</h2><p>这里的世界视图窗口并不灵活，父子级关系比较固定，且不容易给子组件加入代码。这就需要我们全部由根c++文件进行管理。</p>
+<p>UE里蓝图是最接近预制体的存在，但是他只能反复继承，无法进行组合使用。</p>
+<p>比如我要实现在特定相对位置生成武器（可以是不同类型的），在Unity里我会用<code>预制体</code>预先设计好不同的武器，但是UE里蓝图就比较相当于预制体，我会创建很多不同武器的蓝图</p>
+<ul>
+<li>在Unity管理预制体我会用GameObject列表</li>
+<li>在UE中管理蓝图则应该用STSubclassOf&lt;AActor&gt;，因为AActor是能放置在场景中的</li>
+<li>在Unity里面我们用Instantiate来实例化</li>
+<li>在UE里面我们用Word-&gt;SpawnActor</li>
+<li>在Unity代码中存储预制体是有意义的，因为你完全知道他的脚本结构</li>
+<li>在UE代码中存储蓝图没有意义，因为你无法在C++处调用其方法，除非设计蓝图实现接口或者将其强制转为父类调用（STSubclassOf的时候以父类C++也可)，或者广播消息让他执行。</li>
+</ul>
+<hr>
+<p><em>wasted：</em><br>常用的组件头：<br>Components&#x2F;WidgetComponent.h<br>TextBlock<br>Sound&#x2F;SoundCue.h<br>Engine&#x2F;SkeletalMeshSocket.h<br>Kismet&#x2F;GameplayStatics.h</p>
+<p>在VS中在.h文件处使用ctrl+k+o就可以跳转到对应的.cpp<br>右键选项卡关闭所有选项卡</p>
+<p>关于头文件添加的位置：可以是在.cpp中添加，但是在.h中写的时候要在类名前面加上class所以都在.h中加入最好</p>
+<p>在一个类里面写friend class xxx就会将所有的权限都交给xxx类</p>
+<h1 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h1><ul>
+<li>创建自己的Plugin</li>
+<li>Plugin实际上是独立的build，然后有一个配置文件.uplugin可以指定它去依赖别的plugin，因此为了让这个模块独立，需要自己去添加依赖</li>
+<li>Plugin如果要参与编译，需要添加到build里</li>
+</ul>
+<h1 id="一些引擎使用小问题"><a href="#一些引擎使用小问题" class="headerlink" title="一些引擎使用小问题"></a>一些引擎使用小问题</h1><h2 id="高效操作"><a href="#高效操作" class="headerlink" title="高效操作"></a>高效操作</h2><ul>
+<li>批量修改属性：选中多个资产右键-&gt;资产操作-&gt;使用属性矩阵</li>
+</ul>
+<h2 id="优化设置"><a href="#优化设置" class="headerlink" title="优化设置"></a>优化设置</h2><h3 id="windows设置"><a href="#windows设置" class="headerlink" title="windows设置"></a>windows设置</h3><ul>
+<li>live coding显示乱码？：把语言地区里面的UTF-8的选项打开</li>
+</ul>
+<h3 id="整理蓝图"><a href="#整理蓝图" class="headerlink" title="整理蓝图"></a>整理蓝图</h3><ul>
+<li>用材质函数来构建简单易扩展的材质地基</li>
+<li>用Name节点来理线</li>
+</ul>
+<h3 id="可以删除的目录"><a href="#可以删除的目录" class="headerlink" title="可以删除的目录"></a>可以删除的目录</h3><pre><code>Saved、Intermediate、Binaries
+</code></pre>
+<h3 id="设置Editor"><a href="#设置Editor" class="headerlink" title="设置Editor"></a>设置Editor</h3><ul>
+<li>输入open location 选择main window这样资产就不会新开窗口</li>
+<li>虚幻5.4以上，可以进行蓝图编辑器高级设置，启用注释和仅开发者模式代码<ul>
+<li>可以进一步设置快捷键</li>
+</ul>
+</li>
+</ul>
+<h3 id="不打包直接运行游戏"><a href="#不打包直接运行游戏" class="headerlink" title="不打包直接运行游戏"></a>不打包直接运行游戏</h3><p>使用蓝色的UE图标运行后，右键显示完整菜单，点 launch game</p>
+<h3 id="管理项目结构"><a href="#管理项目结构" class="headerlink" title="管理项目结构"></a>管理项目结构</h3><pre><code>按照虚幻默认，自己的项目在Content单独命名一个，其他的插件/资源和他平级
+</code></pre>
+<hr>
+<p>创建一个Assets文件夹来放资源，将所有物体移进去，如果外面还有那就右键刷新索引然后再删除。（这个方式不太好，还是把我们自己的放在一个单独文件夹比较好</p>
+<p>创建CPP类之后报错可能是#include相对路径有问题</p>
+<p>右键C++类可以创建以对应C++作为parent的蓝图类，在前面加上BP_来区分<br>一般目录结构相对一一对应</p>
+<h1 id="资产相关"><a href="#资产相关" class="headerlink" title="资产相关"></a>资产相关</h1><pre><code>有的需要创建项目，有的不需要
+</code></pre>
+<ul>
+<li>一些搜索关键词<ul>
+<li>人物 ： character</li>
+</ul>
+</li>
+<li>需要创建项目的资产，将Content里面的内容migrate到我们的content文件夹下面</li>
+</ul>
+<h2 id="资产迁移"><a href="#资产迁移" class="headerlink" title="资产迁移"></a>资产迁移</h2><h4 id="动画重定向"><a href="#动画重定向" class="headerlink" title="动画重定向"></a>动画重定向</h4><ul>
+<li>分别为两个角色创建IK RIG资产</li>
+<li>在HIP右键set retarget root</li>
+<li>添加链条⛓️<ul>
+<li>Root: Root处添加链条</li>
+<li>Spine: 2~3个胸骨 添加链</li>
+<li>Left&#x2F;RightArm: 肩开始的4个</li>
+<li>Left&#x2F;RightLeg: 大腿开始的4个</li>
+<li>Neck: 单独脖子</li>
+<li>Head: 单独头</li>
+<li>Left&#x2F;Right手指<ul>
+<li>Thumb</li>
+<li>Index</li>
+<li>Middle</li>
+<li>Ring</li>
+<li>Pinky</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>左下角新增 “full body” 解算器并 “将设置添加到选定骨骼”<ul>
+<li>Hips</li>
+<li>肩开始3个（不包含手）</li>
+<li>大腿开始3个 （不包含脚尖）</li>
+</ul>
+</li>
+<li>添加IK目标<ul>
+<li>双手wrist，双脚尖toe</li>
+<li>（右下角有链条的IK目标，如果没成功，手动设置一下）</li>
+</ul>
+</li>
+<li>创建IK Retargeter，设置from和to两个模型，然后对齐两个模型的姿势<ul>
+<li>用编辑模式手动旋转</li>
+<li>5.4以上可以一键对齐，先自动对齐四肢、脖子、头及其子项，然后再网格对齐手指</li>
+</ul>
+</li>
+<li>（如果想回到5.2）点击创建-&gt;导出为动画资产-&gt;进入-&gt;pose权重拉满-&gt;创建资产-&gt;创建动画-&gt;当前姿势-&gt;复制得到的AnimSeq-&gt;在IKR里面通过动画导入重定向姿势</li>
+<li>可以直接在IKR里面右键导出，也可右键动画蓝图导出蓝图相关动作</li>
+</ul>
+<p><em>Tips:</em> </p>
+<ul>
+<li>如果模型的骨骼是类似的，可以不用重定向直接更换骨骼。</li>
+<li>若比例有所调整，RootMotion会导致模型缩放问题，需要进入AnimSeq将参考设置为Fisrt Frame</li>
+</ul>
+<hr>
+<p><em>wasted:</em><br>右键导入一些fbx模型和动画，如果是动画可以不导入mesh而选择我们有的skeleton<br>点开skeleton重定向为humanoid设置对应的部位</p>
+<p>让需要动画迁移的两个模型使用Tpose然后让提供动画的一方的骨骼应用mesh asset<br>右键动画进行迁移，并且可以调整一些动画设置</p>
+<ul>
+<li>右键root打开动画调整</li>
+<li>让root为animation</li>
+<li>root的下一个为animation and scale</li>
+</ul>
+<h3 id="添加资产"><a href="#添加资产" class="headerlink" title="添加资产"></a>添加资产</h3><ul>
+<li>在内容浏览器左上角点击 ADD , 添加默认资产</li>
+<li>导入FBX的时候高级里勾选 Import Morph Targets可以导入表情</li>
+</ul>
+<h3 id="修改资产"><a href="#修改资产" class="headerlink" title="修改资产"></a>修改资产</h3><ul>
+<li>在blender中拍摄垂直UV（用于记录物体自身结构相对位置，方便shader使用）<ul>
+<li>物体模式下移动物体，重设原点位置</li>
+<li>shift a 新建相机</li>
+<li>相机改为正交并对准物体</li>
+<li>新建一个UV</li>
+<li>添加UV投射修改器，选择UV，物体选择相机，应用一下</li>
+<li>然后去编辑UV，缩放到合适位置</li>
+</ul>
+</li>
+</ul>
+<h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h2><h3 id="打包问题"><a href="#打包问题" class="headerlink" title="打包问题"></a>打包问题</h3><p>一定要安装core net 3.1<br>一开始拿到vs项目需要去生成我们对应项目名的<br>关闭livecoding然后手动编译再继续<br>平时开发的时候就可以打开livecoding然后ctrl+alt+f11来快速编译<br>不要用VS2022的build<br>如果还是没有加载，那就关闭编辑器，删除对应的intermediate, binaries(比如在plugins下)，然后ctrl+b，然后再打开编辑器，再编译</p>
+<p>建议打开项目文件夹，一旦出现live coding提示编译没用，先试试非live coding，还不行就关闭VS和编辑器重新打开，并使用非live coding</p>
+<p><strong>另外注意蓝图会覆盖我们代码设置的变量值（例如构造函数里设置的），所以要改蓝图的值</strong></p>
+<p>打包地图问题：<br>项目设置-&gt;搜索 “map”-&gt;打包版本中要包括的关卡列表。</p>
+<p>创建c++类之后文件夹没有显示出来：<br>可以先把c++里面的报错解决了然后再编译一次（无需关闭编辑器）</p>
+<h3 id="Editor问题"><a href="#Editor问题" class="headerlink" title="Editor问题"></a>Editor问题</h3><ul>
+<li>如果崩溃，可以看到是不是代码问题，如果是，一般是空指针导致。</li>
+<li>否则编译导致，删光可删除的文件夹（包括plugins里面），可额外删一下Config目录</li>
+<li>如果在引擎中没有定义了的c++类，那就运行一次编译指令就好（IDE或live coding）<ul>
+<li>此时有丢失父类的蓝图，右键资源进行reload</li>
+<li>去编辑器偏好设置里左侧加载和保存中勾选上启动时强制编译force compilation。<em><strong>（一劳永逸。）</strong></em></li>
+</ul>
+</li>
+</ul>
+<h3 id="IDE问题"><a href="#IDE问题" class="headerlink" title="IDE问题"></a>IDE问题</h3><ul>
+<li>如果解析出问题，要右键生成vs文件，然后再自己打开IDE</li>
+<li>C++类是IDE影响UE，而不是UE影响IDE，所以重新编译即可显示到UE中<ul>
+<li>在IDE里重名C++类和文件名，无法立刻作用到UE，继续使用有bug，及时重启</li>
+</ul>
+</li>
+<li>插件要加入到Build文件编译列表</li>
+<li>C++修改了构造函数，但是UE需要reload才能有效</li>
+<li>Attach to component 和 Attach to actor 和 SetupAttachment 和 AttachActor的区别<ul>
+<li>Attach to component 和 Attach to actor附加到的目标粒度不同，component可以附加到比如mesh这种组件</li>
+<li>Setup用于构造函数阶段</li>
+<li>AttachActor是反向的，即调用者给自己加一个Actor子类</li>
+</ul>
+</li>
+</ul>
+<h3 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h3><ul>
+<li><p>cpp构造函数里设置的属性，蓝图有可能会覆盖</p>
+</li>
+<li><p>回调函数和委托需要设置为UFUNCTION</p>
+</li>
+<li><p>有时候可能没有传入资源导致传入值没变化hud只调用一次</p>
+</li>
+<li><p>传递给动画机的一些变量名都是以b开头的，比如bAiming</p>
+</li>
+<li><p>如果遇到了奇怪的问题一般都是c++类初始化有错导致的，看看是哪个组件丢失了，最好写的时候习惯性加上log</p>
+</li>
+<li><p>网络封装带来的bug<br class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214409654.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214409654.png"><br>  比如说GetBaseAimRotation().Yaw不起作用，那么我们就自己手动同步这个值，让这个值在locally的地方更新并同步</p>
+</li>
+<li><p>子弹速度过快会导致近距离特效看不到，或者一些同步丢失</p>
+</li>
+<li><p>用OnRep_ReplicatedMovement() override来做</p>
+</li>
+<li><p>有可能因为有些函数在初始化的时候被调用了导致某些值被设置回去了，可以打印看看</p>
+</li>
+<li><p>如果出现场景问题，可以删除gamemode重新配置</p>
+</li>
+<li><p>生成方式<br>  -<img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214422121.png"></p>
+</li>
+<li><p>发现replicated变量的绑定方法没有调用，看看是不是设置了replicatedUsing &#x3D; xxx</p>
+</li>
+<li><p>出现了一些objectwarning，可以关闭ue，重新从rider运行</p>
+</li>
+<li><p>重生之后会调用这个，所以用这个来做一些操作</p>
+</li>
+<li><p class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214436527.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214436527.png"></p>
+</li>
+<li><p>在.h文件中用class来定义就可以防止循环依赖</p>
+</li>
+<li><p>给指针引用加上UPROPERTY()就不会出现未定义crash</p>
+</li>
+</ul>
+<h1 id="动画系统"><a href="#动画系统" class="headerlink" title="动画系统"></a>动画系统</h1><h2 id="动画序列"><a href="#动画序列" class="headerlink" title="动画序列"></a>动画序列</h2><pre><code>就是各个骨骼在每一帧的相对运动信息
+</code></pre>
+<p>root motion 是将根骨骼位移应用到骨骼<br>force root lock 是将根骨骼限定在胶囊体内<br>force root lock 仅仅是在 root motion没启用的时候，用于让动画不要移动出胶囊体范围的，也就是让动画一直在原地播放，即使动画拥有根骨骼的运动数据</p>
+<h2 id="ABP-动画蓝图"><a href="#ABP-动画蓝图" class="headerlink" title="ABP 动画蓝图"></a>ABP 动画蓝图</h2><ul>
+<li>可以先做一个通用的C++动画类，用于暴露数据给动画蓝图</li>
+<li>然后创建一个不带骨架的动画蓝图模板来继承这个C++类</li>
+<li>然后从这个模板中创建动画蓝图实例，才是真正的角色</li>
+</ul>
+<h2 id="BS-blend-space"><a href="#BS-blend-space" class="headerlink" title="BS blend space"></a>BS blend space</h2><pre><code>一般输入是速度，用一维的就够了
+</code></pre>
+<h2 id="蒙太奇"><a href="#蒙太奇" class="headerlink" title="蒙太奇"></a>蒙太奇</h2><ul>
+<li>右键动画序列创建蒙太奇<br class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214517333.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214517333.png"></li>
+<li>一般作为character的成员，由character通过PlayAnimMontage调用（当然，用AnimInstance的Montage_Play也可以）</li>
+<li>插槽是一种用于分类动画的栏目，只有在动画蓝图里使用插槽，才能播放对应动画</li>
+<li>插槽里面可以放置通知，通知的处理通过在AnimInstance里定义一个AnimNotify_xxx开头的UFUNCTION()实现</li>
+</ul>
+<h1 id="地编"><a href="#地编" class="headerlink" title="地编"></a>地编</h1><ul>
+<li>ctrl+数字 可以设置镜头标签， 然后直接按对应数字就可以回去</li>
+<li>会动和不会动的网格体 要正确设置</li>
+<li>按住shift移动物体可以让相机跟随</li>
+<li>F快速聚焦到物体</li>
+<li>按住Alt拖动进行复制</li>
+</ul>
+<h1 id="游戏逻辑"><a href="#游戏逻辑" class="headerlink" title="游戏逻辑"></a>游戏逻辑</h1><h2 id="联机"><a href="#联机" class="headerlink" title="联机"></a>联机</h2><h3 id="联机准备"><a href="#联机准备" class="headerlink" title="联机准备"></a>联机准备</h3><ul>
+<li>现在我们已经有自己写的Steam联机插件，直接复制</li>
+<li>启动Online Subsystem Steam插件，如果要修改，插件要加入到Build文件编译列表</li>
+<li>去搜索Online Subsystem Steam然后复制配置到DefaultEngine.ini<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">[</span>/Script/Engine.GameEngine<span class="hljs-punctuation">]</span><br>+NetDriverDefinitions=(DefName=<span class="hljs-string">&quot;GameNetDriver&quot;</span><span class="hljs-punctuation">,</span>DriverClassName=<span class="hljs-string">&quot;OnlineSubsystemSteam.SteamNetDriver&quot;</span><span class="hljs-punctuation">,</span>DriverClassNameFallback=<span class="hljs-string">&quot;OnlineSubsystemUtils.IpNetDriver&quot;</span>)<br><br><span class="hljs-punctuation">[</span>OnlineSubsystem<span class="hljs-punctuation">]</span><br>DefaultPlatformService=Steam<br><br><span class="hljs-punctuation">[</span>OnlineSubsystemSteam<span class="hljs-punctuation">]</span><br>bEnabled=<span class="hljs-literal"><span class="hljs-keyword">true</span></span><br>SteamDevAppId=<span class="hljs-number">480</span><br><br>; If using Sessions<br>; bInitServerOnClient=<span class="hljs-literal"><span class="hljs-keyword">true</span></span><br><br><span class="hljs-punctuation">[</span>/Script/OnlineSubsystemSteam.SteamNetDriver<span class="hljs-punctuation">]</span><br>NetConnectionClassName=<span class="hljs-string">&quot;OnlineSubsystemSteam.SteamNetConnection&quot;</span><br></code></pre></td></tr></table></figure></li>
+<li>去DefaultGame.ini设置：<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">[</span>/Script/Engine.GameSession<span class="hljs-punctuation">]</span><br>MaxPlayers=<span class="hljs-number">100</span><br></code></pre></td></tr></table></figure></li>
+<li>去资源管理器的设置里面打开plugin content的显示</li>
+<li>在Level的BP中调用create widget然后setup menu，（注意人数设置）</li>
+<li>创建并绑定Lobby地图</li>
+<li>删光可删除的文件夹（包括plugins里面），如果出错，额外删一下Config目录</li>
+<li>Project Setting里面设置一下Default Maps</li>
+<li>开始按钮旁边更多里面选择模式测试</li>
+</ul>
+<h3 id="Seamless-Travel"><a href="#Seamless-Travel" class="headerlink" title="Seamless Travel"></a>Seamless Travel</h3><pre><code>在LobbyGameMode中的PostLogin里判断Lobby中的人数，到达之后，设置bUseSeamlessTravel = true 即可。
+或者直接在GameMode蓝图属性里设置
+空地图作为Transition Level，去Project Setting里设置
+</code></pre>
+<h3 id="判断角色"><a href="#判断角色" class="headerlink" title="判断角色"></a>判断角色</h3><ul>
+<li>Pawn拥有GetLocalRole和GetRemoteRole的方法</li>
+<li>LocalRole中，客户端看自己是AutonomousProcxy，看别人是Simulated，服务器看大家都是Authority</li>
+<li>RemoteRole中，客户端看所有都是Authority，服务器看自己是Autonomous，看别人是simulated</li>
+<li><code>HasAuthority()</code>​：用于<strong>服务器逻辑</strong>，确保关键操作由权威端执行，等价于<em>LocalRole &#x3D; Authority</em></li>
+<li><code>IsLocallyControlled()</code>：用于<strong>客户端逻辑</strong>，区分本地玩家与远程玩家，等价于RemoteRole &#x3D; AutonomousProcxy || LocalRole &#x3D; AutonomousProcxy，但是实际上通过GetOwner来判断控制器所有权</li>
+</ul>
+<h3 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h3><ul>
+<li>在本地进行操作之后，再通过RPC操作使得这个操作被服务器认可</li>
+<li>一旦服务器上做了这个操作，而这个修改的值又是Replicated，就可以无痛同步</li>
+</ul>
+<h2 id="游戏元素的关系"><a href="#游戏元素的关系" class="headerlink" title="游戏元素的关系"></a>游戏元素的关系</h2><p>一般由PlayerController来管理UI和PlayerState<br>由GameMode提供一些操作游戏状态的方法，例如杀人<br>由Character来完成交互逻辑，包括调用Controller以及GameMode<br>PlayerState记录一些关键数据并显示在UI上</p>
+<p>他们之间的绑定是在GameMode的扩展选项选的，例如默认的HUD, playerstate，pawn等</p>
+<h2 id="射线检测"><a href="#射线检测" class="headerlink" title="射线检测"></a>射线检测</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//这个可以判断是不是实现了IInteractWithCrosshairInterface,但是注意我们定义的是InteractWithCrosshairInterface</span><br>TraceHitRes.<span class="hljs-built_in">GetActor</span>()-&gt;<span class="hljs-built_in">Implements</span>&lt;UInteractWithCrosshairInterface&gt;()<br><br><span class="hljs-comment">//用这个承载伤害</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ReceiveDamage</span><span class="hljs-params">(AActor* DamageActor, <span class="hljs-type">float</span> Damage, <span class="hljs-type">const</span> UDamageType* DamageType, <span class="hljs-keyword">class</span> AController* InstigatorController, AActor* DamageCauser)</span></span>;<br><br><span class="hljs-comment">//用这个制造伤害</span><br>UGameplayStatics::<span class="hljs-built_in">ApplyDamage</span>( OtherActor, Damage, OwnerController, <span class="hljs-keyword">this</span>, UDamageType::<span class="hljs-built_in">StaticClass</span>() );<br></code></pre></td></tr></table></figure>
+
+<h2 id="设置初始摄像机"><a href="#设置初始摄像机" class="headerlink" title="设置初始摄像机"></a>设置初始摄像机</h2><ul>
+<li>创建一个Pawn蓝图然后编辑，左上角ADD添加相机组件</li>
+<li>创建一个GameMode将这个Pawn设置为生成目标</li>
+<li>摆放PlayerStart的位置</li>
+</ul>
+<h1 id="UE材质"><a href="#UE材质" class="headerlink" title="UE材质"></a>UE材质</h1><p>ReflectionVector 是从摄像机发射一个向量，这个向量经过面反射后到达的方向</p>
+<p>顶点法向和像素法向的区别：</p>
+<ul>
+<li>顶点法向就存储在顶点上，对于面上的法向值，是差值得到的</li>
+<li>像素法向存储在像素中，每个点都可以不一样，需要配合法线贴图使用，赋予了法线贴图之后才真正和顶点法向产生区别</li>
+<li>顶点法向不管有没有法线贴图都不变，因为是从模型计算出来的。</li>
+</ul>
+<h1 id="UE-扩展"><a href="#UE-扩展" class="headerlink" title="UE 扩展"></a>UE 扩展</h1><h2 id="MMD相关"><a href="#MMD相关" class="headerlink" title="MMD相关"></a>MMD相关</h2><p>创建一个IK RIG资产并在HIP右键set retarget root</p>
+<p>在编辑模式下shift + a添加骨骼，注意方向，ctrl p作为根骨骼</p>
+<h3 id="UE导入MMD"><a href="#UE导入MMD" class="headerlink" title="UE导入MMD"></a>UE导入MMD</h3><p>直接在blender中用mmd tool导人，然后添加Root骨骼，导出选中<br>注意不要到处叶骨骼以及平滑选择面。</p>
+<hr>
+<h6 id="废弃"><a href="#废弃" class="headerlink" title="废弃"></a>废弃</h6><p><em>已经废弃的内容：</em><br>在Blender中用mmd tools，删除骨骼和rigidbody之后，选中mesh并convert to blender，之后导出fbx记得内嵌材质，如果有材质丢失可能是blender无法导出经过处理的节点材质<br>导出动画需要<em>勾选骨骼</em>，导入动画需要勾选mesh<br class='item-img' data-src='/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214530566.png'><img src="/2024/03/24/hello-world/%E5%AD%A6%E4%B9%A0/file-20251212214530566.png"><br>第一次导入动画需要先把动画绑定的模型也导入，因为这样才能匹配骨骼，导入之后可以调整骨骼来把动画拷贝出来</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/12/14/Tech/GAME/Unity%E7%BB%8F%E9%AA%8C/">← 下一篇 Unity经验</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/12/14/Tech/GAME/TA%E5%AD%A6%E4%B9%A0/">TA学习 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">常识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%8D%95%E8%AF%8D"><span class="toc-number">1.1.</span> <span class="toc-text">基础单词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.2.</span> <span class="toc-text">快捷键</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%93%9D%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">蓝图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#event"><span class="toc-number">2.1.</span> <span class="toc-text">event</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CPP"><span class="toc-number">3.</span> <span class="toc-text">CPP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E7%9A%84%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">官方的命名方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A7%94%E6%89%98"><span class="toc-number">3.2.</span> <span class="toc-text">委托</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.3.</span> <span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8override"><span class="toc-number">3.4.</span> <span class="toc-text">常用override</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8EUnity%E4%B8%8D%E5%90%8C%E7%9A%84%E6%98%AF"><span class="toc-number">3.5.</span> <span class="toc-text">与Unity不同的是</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugin"><span class="toc-number">4.</span> <span class="toc-text">Plugin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%BC%95%E6%93%8E%E4%BD%BF%E7%94%A8%E5%B0%8F%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">一些引擎使用小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E6%95%88%E6%93%8D%E4%BD%9C"><span class="toc-number">5.1.</span> <span class="toc-text">高效操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">优化设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#windows%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.2.1.</span> <span class="toc-text">windows设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E7%90%86%E8%93%9D%E5%9B%BE"><span class="toc-number">5.2.2.</span> <span class="toc-text">整理蓝图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E5%88%A0%E9%99%A4%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">5.2.3.</span> <span class="toc-text">可以删除的目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEEditor"><span class="toc-number">5.2.4.</span> <span class="toc-text">设置Editor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E6%89%93%E5%8C%85%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C%E6%B8%B8%E6%88%8F"><span class="toc-number">5.2.5.</span> <span class="toc-text">不打包直接运行游戏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-number">5.2.6.</span> <span class="toc-text">管理项目结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%84%E4%BA%A7%E7%9B%B8%E5%85%B3"><span class="toc-number">6.</span> <span class="toc-text">资产相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E4%BA%A7%E8%BF%81%E7%A7%BB"><span class="toc-number">6.1.</span> <span class="toc-text">资产迁移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">6.1.0.1.</span> <span class="toc-text">动画重定向</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%B5%84%E4%BA%A7"><span class="toc-number">6.1.1.</span> <span class="toc-text">添加资产</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%B5%84%E4%BA%A7"><span class="toc-number">6.1.2.</span> <span class="toc-text">修改资产</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-number">6.2.</span> <span class="toc-text">问题汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E9%97%AE%E9%A2%98"><span class="toc-number">6.2.1.</span> <span class="toc-text">打包问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Editor%E9%97%AE%E9%A2%98"><span class="toc-number">6.2.2.</span> <span class="toc-text">Editor问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDE%E9%97%AE%E9%A2%98"><span class="toc-number">6.2.3.</span> <span class="toc-text">IDE问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BUG"><span class="toc-number">6.2.4.</span> <span class="toc-text">BUG</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.</span> <span class="toc-text">动画系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E5%BA%8F%E5%88%97"><span class="toc-number">7.1.</span> <span class="toc-text">动画序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ABP-%E5%8A%A8%E7%94%BB%E8%93%9D%E5%9B%BE"><span class="toc-number">7.2.</span> <span class="toc-text">ABP 动画蓝图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BS-blend-space"><span class="toc-number">7.3.</span> <span class="toc-text">BS blend space</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%92%99%E5%A4%AA%E5%A5%87"><span class="toc-number">7.4.</span> <span class="toc-text">蒙太奇</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%B0%E7%BC%96"><span class="toc-number">8.</span> <span class="toc-text">地编</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E9%80%BB%E8%BE%91"><span class="toc-number">9.</span> <span class="toc-text">游戏逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E6%9C%BA"><span class="toc-number">9.1.</span> <span class="toc-text">联机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E6%9C%BA%E5%87%86%E5%A4%87"><span class="toc-number">9.1.1.</span> <span class="toc-text">联机准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Seamless-Travel"><span class="toc-number">9.1.2.</span> <span class="toc-text">Seamless Travel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%A7%92%E8%89%B2"><span class="toc-number">9.1.3.</span> <span class="toc-text">判断角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="toc-number">9.1.4.</span> <span class="toc-text">基本思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%85%83%E7%B4%A0%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">9.2.</span> <span class="toc-text">游戏元素的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B"><span class="toc-number">9.3.</span> <span class="toc-text">射线检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%88%9D%E5%A7%8B%E6%91%84%E5%83%8F%E6%9C%BA"><span class="toc-number">9.4.</span> <span class="toc-text">设置初始摄像机</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#UE%E6%9D%90%E8%B4%A8"><span class="toc-number">10.</span> <span class="toc-text">UE材质</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#UE-%E6%89%A9%E5%B1%95"><span class="toc-number">11.</span> <span class="toc-text">UE 扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MMD%E7%9B%B8%E5%85%B3"><span class="toc-number">11.1.</span> <span class="toc-text">MMD相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UE%E5%AF%BC%E5%85%A5MMD"><span class="toc-number">11.1.1.</span> <span class="toc-text">UE导入MMD</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BA%9F%E5%BC%83"><span class="toc-number">11.1.1.0.0.1.</span> <span class="toc-text">废弃</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
