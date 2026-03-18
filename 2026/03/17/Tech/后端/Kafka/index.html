@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kafka | Nervld的小窝</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":15,"search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/mybg3.png');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Kafka</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2026-03-17T04:07:46.841Z" id="date"> 2026-03-17</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2026-03-17T04:07:46.841Z" id="updated"> 2026-03-17</time></div></span><br><span>文章总字数: <div class="control">1.8k</div></span><br><span>预计阅读时间: <div class="control">7 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><h1 id="KafkaConfig"><a href="#KafkaConfig" class="headerlink" title="KafkaConfig"></a>KafkaConfig</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">KafkaConfig</span> &#123;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;spring.kafka.bootstrap-servers&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String bootstrapServers;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;spring.kafka.consumer.group-id&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String groupId;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;spring.kafka.consumer.auto-offset-reset&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String autoOffsetReset;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;spring.kafka.consumer.properties.spring.json.trusted.packages&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String trustedPackages;<br><br>    <span class="hljs-meta">@Value(&quot;$&#123;spring.kafka.topic.dlt&#125;&quot;)</span><br>    <span class="hljs-keyword">private</span> String dltTopic;<br><br>    <span class="hljs-comment">// ===============================</span><br>    <span class="hljs-comment">// 生产者（发消息）- 推荐配置</span><br>    <span class="hljs-comment">// ===============================</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> ProducerFactory&lt;String, Object&gt; <span class="hljs-title function_">producerFactory</span><span class="hljs-params">()</span> &#123;<br>        Map&lt;String, Object&gt; config = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);<br>        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);<br>        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);<br><br>        <span class="hljs-comment">// 可靠性推荐配置</span><br>        config.put(ProducerConfig.ACKS_CONFIG, <span class="hljs-string">&quot;all&quot;</span>);<br>        config.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, <span class="hljs-literal">true</span>);<br>        config.put(ProducerConfig.RETRIES_CONFIG, <span class="hljs-number">3</span>);<br><br>        DefaultKafkaProducerFactory&lt;String, Object&gt; factory = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DefaultKafkaProducerFactory</span>&lt;&gt;(config);<br>        factory.setTransactionIdPrefix(<span class="hljs-string">&quot;kafka-tx-&quot;</span>); <span class="hljs-comment">// 事务前缀。Kafka 事务 = 保证 “发消息” 和 “数据库操作” 同时成功 / 同时失败。</span><br>        <span class="hljs-keyword">return</span> factory;<br>    &#125;<br><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> KafkaTemplate&lt;String, Object&gt; <span class="hljs-title function_">kafkaTemplate</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">KafkaTemplate</span>&lt;&gt;(producerFactory());<br>    &#125;<br><br>    <span class="hljs-comment">// ===============================</span><br>    <span class="hljs-comment">// 消费者（收消息）- 必须配置</span><br>    <span class="hljs-comment">// ===============================</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> ConsumerFactory&lt;String, Object&gt; <span class="hljs-title function_">consumerFactory</span><span class="hljs-params">()</span> &#123;<br>        Map&lt;String, Object&gt; config = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);<br>        config.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);<br>        config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, autoOffsetReset); <span class="hljs-comment">// 你之前漏的，只在【第一次】启动消费者时生效， `latest` = **从今天更新的集数开始看**  `earliest` = **从第一集开始从头看** `none` = **找不到上次看到哪，直接不看了**</span><br>        config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);<br>        config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);<br>        config.put(JsonDeserializer.TRUSTED_PACKAGES, trustedPackages);<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DefaultKafkaConsumerFactory</span>&lt;&gt;(config);<br>    &#125;<br><br>    <span class="hljs-comment">// ===============================</span><br>    <span class="hljs-comment">// 监听器工厂（并发 + 死信队列）</span><br>    <span class="hljs-comment">// ===============================</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> ConcurrentKafkaListenerContainerFactory&lt;String, Object&gt; <span class="hljs-title function_">kafkaListenerContainerFactory</span><span class="hljs-params">(</span><br><span class="hljs-params">            ConsumerFactory&lt;String, Object&gt; consumerFactory,</span><br><span class="hljs-params">            KafkaTemplate&lt;String, Object&gt; kafkaTemplate)</span> &#123;<br><br>        <span class="hljs-comment">// 死信队列：失败消息发去 DLT</span><br>        <span class="hljs-type">DeadLetterPublishingRecoverer</span> <span class="hljs-variable">recoverer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DeadLetterPublishingRecoverer</span>(<br>                kafkaTemplate,<br>                (r, e) -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">TopicPartition</span>(dltTopic, r.partition()));<br><br>        <span class="hljs-comment">// 重试：3秒一次，最多重试4次</span><br>        <span class="hljs-type">DefaultErrorHandler</span> <span class="hljs-variable">errorHandler</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DefaultErrorHandler</span>(recoverer, <span class="hljs-keyword">new</span> <span class="hljs-title class_">FixedBackOff</span>(<span class="hljs-number">3000</span>, <span class="hljs-number">4</span>));<br><br>        ConcurrentKafkaListenerContainerFactory&lt;String, Object&gt; factory = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentKafkaListenerContainerFactory</span>&lt;&gt;();<br>        factory.setConsumerFactory(consumerFactory);<br>        factory.setCommonErrorHandler(errorHandler);<br>        factory.setConcurrency(<span class="hljs-number">3</span>); <span class="hljs-comment">// 并发消费者数量（推荐）</span><br>        <span class="hljs-keyword">return</span> factory;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>真正消费者业务代码只需要：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@KafkaListener(topics = &quot;file-processing&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">listen</span><span class="hljs-params">(Message msg)</span> &#123;<br>    <span class="hljs-comment">// 你的业务</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>生产者业务代码，实际底层就是发送了对消费者不可见的消息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Transactional</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">upload</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-comment">// 1. 存数据库</span><br>    fileMapper.insert(info);<br>    <br>    <span class="hljs-comment">// 2. 发 Kafka 消息</span><br>    kafkaTemplate.send(<span class="hljs-string">&quot;topic&quot;</span>, msg);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><ol>
+<li><p><strong>Queue &#x2F; Topic</strong></p>
+<ul>
+<li>消息队列的 “主题”，业务上的一个频道。</li>
+</ul>
+</li>
+<li><p><strong>Partition（分区）&#x2F; Queue（队列）</strong></p>
+<ul>
+<li><strong>Topic 下面的最小存储单元</strong></li>
+<li>Kafka 叫 Partition</li>
+<li>RocketMQ 叫 Queue</li>
+<li>一个 Topic 可以分成多个分区。</li>
+</ul>
+</li>
+<li><p><strong>消费者组（Consumer Group）</strong></p>
+<ul>
+<li>一组相同逻辑的消费者，<strong>共同消费一个 Topic</strong></li>
+<li>同一个消费者组内：<strong>一条消息只会被一个消费者消费</strong></li>
+</ul>
+</li>
+<li><p><strong>消费位点（Offset）</strong></p>
+<ul>
+<li>标记消费到哪条消息，存在 Broker 或 ZK&#x2F;Kafka 内部。</li>
+</ul>
+</li>
+</ol>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><h2 id="1-为什么要用消息队列？"><a href="#1-为什么要用消息队列？" class="headerlink" title="1. 为什么要用消息队列？"></a>1. 为什么要用消息队列？</h2><p>三大核心：</p>
+<ol>
+<li><strong>异步</strong>：不用同步等待，提升响应速度</li>
+<li><strong>解耦</strong>：服务之间不直接强依赖</li>
+<li><strong>削峰</strong>：扛住流量洪峰，保护下游系统</li>
+</ol>
+<p>扩展：最终一致性、广播、错峰流控。</p>
+<hr>
+<h2 id="2-消息队列有什么缺点？"><a href="#2-消息队列有什么缺点？" class="headerlink" title="2. 消息队列有什么缺点？"></a>2. 消息队列有什么缺点？</h2><ol>
+<li>系统复杂度变高</li>
+<li><strong>一致性问题</strong>（需要最终一致性方案）</li>
+<li><strong>可用性依赖</strong>：MQ挂了可能影响业务</li>
+<li>可能出现<strong>重复消费、消息丢失、消息乱序</strong></li>
+</ol>
+<hr>
+<h2 id="3-如何保证消息不丢失？（三面高频）"><a href="#3-如何保证消息不丢失？（三面高频）" class="headerlink" title="3. 如何保证消息不丢失？（三面高频）"></a>3. 如何保证消息不丢失？（三面高频）</h2><p><strong>生产端 + 存储端 + 消费端 三段保障</strong></p>
+<ol>
+<li><p><strong>生产者</strong></p>
+<ul>
+<li>同步&#x2F;异步确认（ack）</li>
+<li>失败重试</li>
+<li>落库 + 定时任务重试（可靠生产）</li>
+</ul>
+</li>
+<li><p><strong>Broker 存储</strong></p>
+<ul>
+<li>持久化</li>
+<li>多副本（同步刷盘、同步复制）</li>
+<li>主从同步保证</li>
+</ul>
+</li>
+<li><p><strong>消费者</strong></p>
+<ul>
+<li><strong>先执行业务，再确认 ack</strong></li>
+<li>禁止自动 ack</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="4-如何解决消息重复消费？（幂等性）"><a href="#4-如何解决消息重复消费？（幂等性）" class="headerlink" title="4. 如何解决消息重复消费？（幂等性）"></a>4. 如何解决消息重复消费？（幂等性）</h2><p>核心：<strong>消费必须幂等</strong>，重复消费结果一样。</p>
+<p>常见方案：</p>
+<ol>
+<li>唯一消息 ID + 去重表（Redis&#x2F;DB）</li>
+<li>数据库唯一约束</li>
+<li>状态机（已处理就跳过）</li>
+<li>业务天然幂等（insert 唯一键、update 同值）</li>
+</ol>
+<hr>
+<h2 id="5-如何保证消息顺序？"><a href="#5-如何保证消息顺序？" class="headerlink" title="5. 如何保证消息顺序？"></a>5. 如何保证消息顺序？</h2><p>场景：订单创建 → 支付 → 发货 必须顺序。</p>
+<p>方案：</p>
+<ol>
+<li><strong>全局顺序</strong>：单线程、单分区、单消费者（性能差）</li>
+<li><strong>局部顺序</strong>（推荐）<ul>
+<li>同一业务 ID（如订单ID）<strong>哈希路由到同一个队列&#x2F;分区</strong></li>
+<li>同一个分区内天然有序</li>
+<li>消费者单线程消费该分区</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="6-消息积压怎么解决？"><a href="#6-消息积压怎么解决？" class="headerlink" title="6. 消息积压怎么解决？"></a>6. 消息积压怎么解决？</h2><ol>
+<li>先看为什么积压：<ul>
+<li>消费者挂了&#x2F;慢</li>
+<li>生产流量突增</li>
+</ul>
+</li>
+<li>快速处理：<ul>
+<li>增加消费者（不超过队列数&#x2F;分区数）</li>
+<li>临时扩容队列&#x2F;分区</li>
+<li>消费逻辑优化（异步、批量、减少IO）</li>
+</ul>
+</li>
+<li>极端：<ul>
+<li>先转发到死信队列&#x2F;临时队列，事后修复重放</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="7-死信队列是什么？"><a href="#7-死信队列是什么？" class="headerlink" title="7. 死信队列是什么？"></a>7. 死信队列是什么？</h2><p>消息变成死信的情况：</p>
+<ul>
+<li>消息被拒绝</li>
+<li>过期</li>
+<li>队列满</li>
+</ul>
+<p>死信队列：</p>
+<ul>
+<li>专门存“无法正常消费”的消息</li>
+<li>人工排查、修复后重放</li>
+</ul>
+<hr>
+<h2 id="8-延时队列-延迟队列使用场景"><a href="#8-延时队列-延迟队列使用场景" class="headerlink" title="8. 延时队列&#x2F;延迟队列使用场景"></a>8. 延时队列&#x2F;延迟队列使用场景</h2><p>场景：</p>
+<ul>
+<li>订单超时未支付，自动取消</li>
+<li>收货后7天自动确认</li>
+<li>短信&#x2F;通知延迟发送</li>
+</ul>
+<p>实现：</p>
+<ul>
+<li>RabbitMQ：TTL + 死信队列</li>
+<li>RocketMQ：自带延迟等级</li>
+<li>Kafka：用时间轮&#x2F;外部定时</li>
+</ul>
+<hr>
+<h2 id="9-Kafka、RocketMQ、RabbitMQ-怎么选？"><a href="#9-Kafka、RocketMQ、RabbitMQ-怎么选？" class="headerlink" title="9. Kafka、RocketMQ、RabbitMQ 怎么选？"></a>9. Kafka、RocketMQ、RabbitMQ 怎么选？</h2><ul>
+<li><strong>Kafka</strong>：高吞吐、日志、流处理、大数据</li>
+<li><strong>RocketMQ</strong>：金融&#x2F;电商，可靠、事务消息、延迟消息</li>
+<li><strong>RabbitMQ</strong>：轻量、易用、灵活路由、中小项目</li>
+</ul>
+<hr>
+<h1 id="二、场景题（面试最爱问）"><a href="#二、场景题（面试最爱问）" class="headerlink" title="二、场景题（面试最爱问）"></a>二、场景题（面试最爱问）</h1><h2 id="场景1：订单创建后，扣减库存、通知物流、发短信，如何用MQ设计？"><a href="#场景1：订单创建后，扣减库存、通知物流、发短信，如何用MQ设计？" class="headerlink" title="场景1：订单创建后，扣减库存、通知物流、发短信，如何用MQ设计？"></a>场景1：订单创建后，扣减库存、通知物流、发短信，如何用MQ设计？</h2><ol>
+<li>订单服务写完订单 → 发 MQ</li>
+<li>库存服务、物流服务、通知服务<strong>分别订阅消费</strong></li>
+<li>优点：解耦、异步、不阻塞主流程</li>
+<li>保证：可靠发送 + 消费者幂等</li>
+</ol>
+<hr>
+<h2 id="场景2：如果MQ突然挂了，怎么办？"><a href="#场景2：如果MQ突然挂了，怎么办？" class="headerlink" title="场景2：如果MQ突然挂了，怎么办？"></a>场景2：如果MQ突然挂了，怎么办？</h2><ol>
+<li>业务降级：核心流程同步，非核心降级</li>
+<li>生产者：消息先落库，定时任务重试发送</li>
+<li>高可用：集群、主从、多机房</li>
+</ol>
+<hr>
+<h2 id="场景3：如何实现分布式事务？"><a href="#场景3：如何实现分布式事务？" class="headerlink" title="场景3：如何实现分布式事务？"></a>场景3：如何实现分布式事务？</h2><p>主流方案：</p>
+<ol>
+<li><strong>可靠消息最终一致性</strong>（最常用）<ul>
+<li>本地事务 + 消息表</li>
+<li>定时任务轮询未发送消息</li>
+</ul>
+</li>
+<li><strong>事务消息</strong>（RocketMQ）<ul>
+<li>半消息 → 执行本地事务 → 确认提交&#x2F;回滚</li>
+</ul>
+</li>
+<li>TCC（性能差、侵入强）</li>
+</ol>
+<hr>
+<h2 id="场景4：百万流量突洪，如何用MQ抗住？"><a href="#场景4：百万流量突洪，如何用MQ抗住？" class="headerlink" title="场景4：百万流量突洪，如何用MQ抗住？"></a>场景4：百万流量突洪，如何用MQ抗住？</h2><ol>
+<li>MQ 削峰，前端流量全部扔进MQ</li>
+<li>消费者按自己能力慢慢消费</li>
+<li>避免数据库被打垮</li>
+<li>配合限流、降级</li>
+</ol>
+<hr>
+<h2 id="场景5：消费失败无限重试，怎么处理？"><a href="#场景5：消费失败无限重试，怎么处理？" class="headerlink" title="场景5：消费失败无限重试，怎么处理？"></a>场景5：消费失败无限重试，怎么处理？</h2><ol>
+<li>重试一定次数（如3次）</li>
+<li>仍失败 → 扔<strong>死信队列</strong></li>
+<li>人工排查 + 修复后重放</li>
+<li>避免死循环打垮系统</li>
+</ol>
+<hr>
+<h1 id="三、简短背诵版（面试前速记）"><a href="#三、简短背诵版（面试前速记）" class="headerlink" title="三、简短背诵版（面试前速记）"></a>三、简短背诵版（面试前速记）</h1><ul>
+<li>作用：异步、解耦、削峰</li>
+<li>三大问题：丢失、重复、乱序</li>
+<li>不丢失：生产ack、broker持久化、消费后ack</li>
+<li>重复消费：幂等（唯一ID、去重表）</li>
+<li>顺序：同ID路由同分区，单线程消费</li>
+<li>积压：加消费者、优化消费、临时扩容</li>
+<li>死信：失败&#x2F;过期&#x2F;拒收 → 死信队列 → 人工重放</li>
+<li>分布式事务：可靠消息最终一致性 &#x2F; 事务消息</li>
+</ul>
+<hr>
+<p>你要的话，我可以再给你整理：</p>
+<ol>
+<li><strong>纯面试背诵版（超精简1页）</strong></li>
+<li><strong>针对 Kafka &#x2F; RocketMQ 分别的八股</strong></li>
+<li><strong>模拟面试一问一答</strong></li>
+</ol>
+<p>你想要哪个版本？</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/03/17/Tech/%E5%90%8E%E7%AB%AF/Spring/">← 下一篇 Spring</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/03/17/Tech/%E5%90%8E%E7%AB%AF/Linux/">Linux 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#KafkaConfig"><span class="toc-number">1.</span> <span class="toc-text">KafkaConfig</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">一些概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%EF%BC%9F"><span class="toc-number">3.1.</span> <span class="toc-text">1. 为什么要用消息队列？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E6%9C%89%E4%BB%80%E4%B9%88%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="toc-number">3.2.</span> <span class="toc-text">2. 消息队列有什么缺点？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%EF%BC%9F%EF%BC%88%E4%B8%89%E9%9D%A2%E9%AB%98%E9%A2%91%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">3. 如何保证消息不丢失？（三面高频）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%B6%88%E6%81%AF%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%EF%BC%9F%EF%BC%88%E5%B9%82%E7%AD%89%E6%80%A7%EF%BC%89"><span class="toc-number">3.4.</span> <span class="toc-text">4. 如何解决消息重复消费？（幂等性）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E9%A1%BA%E5%BA%8F%EF%BC%9F"><span class="toc-number">3.5.</span> <span class="toc-text">5. 如何保证消息顺序？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%B6%88%E6%81%AF%E7%A7%AF%E5%8E%8B%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-number">3.6.</span> <span class="toc-text">6. 消息积压怎么解决？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%AD%BB%E4%BF%A1%E9%98%9F%E5%88%97%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">3.7.</span> <span class="toc-text">7. 死信队列是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%BB%B6%E6%97%B6%E9%98%9F%E5%88%97-%E5%BB%B6%E8%BF%9F%E9%98%9F%E5%88%97%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">3.8.</span> <span class="toc-text">8. 延时队列&#x2F;延迟队列使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Kafka%E3%80%81RocketMQ%E3%80%81RabbitMQ-%E6%80%8E%E4%B9%88%E9%80%89%EF%BC%9F"><span class="toc-number">3.9.</span> <span class="toc-text">9. Kafka、RocketMQ、RabbitMQ 怎么选？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9C%BA%E6%99%AF%E9%A2%98%EF%BC%88%E9%9D%A2%E8%AF%95%E6%9C%80%E7%88%B1%E9%97%AE%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">二、场景题（面试最爱问）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF1%EF%BC%9A%E8%AE%A2%E5%8D%95%E5%88%9B%E5%BB%BA%E5%90%8E%EF%BC%8C%E6%89%A3%E5%87%8F%E5%BA%93%E5%AD%98%E3%80%81%E9%80%9A%E7%9F%A5%E7%89%A9%E6%B5%81%E3%80%81%E5%8F%91%E7%9F%AD%E4%BF%A1%EF%BC%8C%E5%A6%82%E4%BD%95%E7%94%A8MQ%E8%AE%BE%E8%AE%A1%EF%BC%9F"><span class="toc-number">4.1.</span> <span class="toc-text">场景1：订单创建后，扣减库存、通知物流、发短信，如何用MQ设计？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF2%EF%BC%9A%E5%A6%82%E6%9E%9CMQ%E7%AA%81%E7%84%B6%E6%8C%82%E4%BA%86%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">4.2.</span> <span class="toc-text">场景2：如果MQ突然挂了，怎么办？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF3%EF%BC%9A%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%EF%BC%9F"><span class="toc-number">4.3.</span> <span class="toc-text">场景3：如何实现分布式事务？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF4%EF%BC%9A%E7%99%BE%E4%B8%87%E6%B5%81%E9%87%8F%E7%AA%81%E6%B4%AA%EF%BC%8C%E5%A6%82%E4%BD%95%E7%94%A8MQ%E6%8A%97%E4%BD%8F%EF%BC%9F"><span class="toc-number">4.4.</span> <span class="toc-text">场景4：百万流量突洪，如何用MQ抗住？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF5%EF%BC%9A%E6%B6%88%E8%B4%B9%E5%A4%B1%E8%B4%A5%E6%97%A0%E9%99%90%E9%87%8D%E8%AF%95%EF%BC%8C%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%EF%BC%9F"><span class="toc-number">4.5.</span> <span class="toc-text">场景5：消费失败无限重试，怎么处理？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E7%9F%AD%E8%83%8C%E8%AF%B5%E7%89%88%EF%BC%88%E9%9D%A2%E8%AF%95%E5%89%8D%E9%80%9F%E8%AE%B0%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">三、简短背诵版（面试前速记）</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
