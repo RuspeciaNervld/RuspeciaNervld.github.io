@@ -180,7 +180,86 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
 </ul>
 </li>
 </ul>
-<h3 id="实时通信架构"><a href="#实时通信架构" class="headerlink" title="实时通信架构"></a>实时通信架构</h3><h3 id="异步任务管道"><a href="#异步任务管道" class="headerlink" title="异步任务管道"></a>异步任务管道</h3><ul>
+<h3 id="实时通信架构"><a href="#实时通信架构" class="headerlink" title="实时通信架构"></a>实时通信架构</h3><p>webRTC?<br>是一个支持浏览器和移动应用进行实时音视频通信的开源项目，无需安装插件，通过简单的JavaScript API 即可实现P2P通信。<br><strong>WebRTC 不是单一协议，而是一个协议栈&#x2F;框架</strong>，包含多个协议协同工作：</p>
+<table>
+<thead>
+<tr>
+<th align="left">层级</th>
+<th align="left">协议</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>应用层</strong></td>
+<td align="left">JavaScript API</td>
+<td align="left">开发者接口</td>
+</tr>
+<tr>
+<td align="left"><strong>信令层</strong></td>
+<td align="left">自定义&#x2F;WebSocket&#x2F;SIP&#x2F;XMPP</td>
+<td align="left">协商SDP&#x2F;ICE（WebRTC不规定信令协议）</td>
+</tr>
+<tr>
+<td align="left"><strong>媒体传输</strong></td>
+<td align="left"><strong>SRTP</strong> (Secure RTP)</td>
+<td align="left">加密音视频传输</td>
+</tr>
+<tr>
+<td align="left"><strong>数据通道</strong></td>
+<td align="left"><strong>SCTP</strong> over DTLS</td>
+<td align="left">可靠&#x2F;不可靠数据传输</td>
+</tr>
+<tr>
+<td align="left"><strong>安全层</strong></td>
+<td align="left"><strong>DTLS</strong> (Datagram TLS)</td>
+<td align="left">密钥交换，为SRTP&#x2F;SCTP加密</td>
+</tr>
+<tr>
+<td align="left"><strong>传输层</strong></td>
+<td align="left"><strong>UDP</strong> (主要) + TCP fallback</td>
+<td align="left">媒体走UDP，信令可走TCP</td>
+</tr>
+<tr>
+<td align="left"><strong>网络层</strong></td>
+<td align="left"><strong>ICE&#x2F;STUN&#x2F;TURN</strong></td>
+<td align="left">NAT穿透框架</td>
+</tr>
+<tr>
+<td align="left"><strong>WebRTC 是面向连接的</strong>，但<strong>基于UDP实现</strong>（这一点常被误解）。</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">WebRTC</th>
+<th align="left">对比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>连接建立</strong></td>
+<td align="left">需要握手（ICE + DTLS）</td>
+<td align="left">类似TCP的”连接”概念</td>
+</tr>
+<tr>
+<td align="left"><strong>底层协议</strong></td>
+<td align="left">UDP (用户数据报协议)</td>
+<td align="left">非TCP</td>
+</tr>
+<tr>
+<td align="left"><strong>可靠性</strong></td>
+<td align="left">可选：SRTP(不可靠) &#x2F; SCTP(可靠)</td>
+<td align="left">应用层控制</td>
+</tr>
+<tr>
+<td align="left"><strong>有序性</strong></td>
+<td align="left">可选配置</td>
+<td align="left">数据通道可设 <code>ordered: true/false</code></td>
+</tr>
+</tbody></table>
+<h3 id="异步任务管道"><a href="#异步任务管道" class="headerlink" title="异步任务管道"></a>异步任务管道</h3><ul>
 <li>生产这配置：<ul>
 <li>acks&#x3D;all，确保消息所在分区的所有同步副本都写入成功才认为成功</li>
 <li>首次消费失败后开始重试、每次重试间隔 3 秒、加上首次消费，一共最多尝试 5 次、仍失败就投递到 DLT</li>

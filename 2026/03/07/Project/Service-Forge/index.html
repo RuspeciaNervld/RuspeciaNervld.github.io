@@ -78,6 +78,73 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
  const script = document.createElement('script');
  script.src = 'https://vercount.one/js';
  document.head.appendChild(script);
-});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Service-Forge</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2026-03-07T10:41:27.116Z" id="date"> 2026-03-07</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2026-03-07T10:41:27.116Z" id="updated"> 2026-03-07</time></div></span><br><span>文章总字数: <div class="control">56</div></span><br><span>预计阅读时间: <div class="control">1 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><p><a target="_blank" rel="noopener" href="https://www.paicoding.com/column/13/23">https://www.paicoding.com/column/13/23</a></p>
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Service-Forge</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2026-03-07T10:41:27.116Z" id="date"> 2026-03-07</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2026-03-18T08:25:47.919Z" id="updated"> 2026-03-18</time></div></span><br><span>文章总字数: <div class="control">1.9k</div></span><br><span>预计阅读时间: <div class="control">6 分钟</div></span><br><span id="vercount_container_page_pv">页面浏览: <span class="control" id="vercount_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><p><a target="_blank" rel="noopener" href="https://www.paicoding.com/column/13/23">https://www.paicoding.com/column/13/23</a></p>
 <p>我们采用了多层安全机制。首先，所有插件的定义都必须经过 Schema 校验，明确声明它需要哪些权限（如文件读写、网络访问等）。</p>
+<p>开始整理一下Service-Forge</p>
+<p>首先这是一个agent时代的自动化工作流系统</p>
+<p>也就是包含agent和工作流两方面的内容</p>
+<p>让agent来写工作流，这个是目前的方案，后续可能会进一步agentic RL，让AI在写工作流这一块更擅长。</p>
+<p>目前来说主要实现的是框架层面的东西。</p>
+<p>首先核心是使用K8s集群来做容器编排，然后我还写了一个服务中心用于方便的部署和管理所有的服务，</p>
+<p>那你有没有真的做过一个agent:?</p>
+<p>这个东西的意义在于让开发者在写服务的时候不用去关心底层的日志系统、负载均衡、鉴权路由】数据库存储、知识库构建等等，比较类似于MCP服务的东西，但是</p>
+<p>我们认为工作流是比较适合于变化量不大但是需求比较高的的场景，比如说记日程、比如说写</p>
+<p>xxx也是优化了几个版本吧，等等之类的话术。。。。</p>
+<p>需要把项目总结成文章。</p>
+<ul>
+<li>这个项目算是给实验室项目做一个技术底座，然后也非常方便后续的扩展和升级，以及更多功能的接入。</li>
+<li>我们是有一个智能戒指，可以气息唤醒说话，第二大脑算是给这个硬件订做的一个软件平台把，但是他也能独立使用。</li>
+<li>我们用的是K8s来做整个服务集群，这样比较方便后续扩展多台服务器，方便做环境隔离服务管理等等。</li>
+<li>所以我还写了一个service-center，并且提供了一个命令行工具来和他交互，这样就能很快把服务构建好后的压缩包发送到服务器来进行一个部署，也可以标记版本和环境等信息。</li>
+<li>配置中心就是借助K8s里的那个ConfigMap来实现的</li>
+<li>然后就是所有服务的基础框架，那个service-forge，是一个基于DAG的工作流服务运行工具，提供了多种触发器，比如https的、kafka的等等。</li>
+<li>然后作为开发者其实要写的代码只有核心逻辑成分，像调用大模型、日志记录、数据库维护、用户管理、token记录等等都放在这个库里，在节点运行的过程中统一自动进行。</li>
+<li>比如我们在调用大模型这一块统一走的是LiteLLM，他封装了目前的比较全面的大模型调用api以及费用等信息。</li>
+<li>用DAG主要的好处就是可以比较清晰的知道节点间的依赖关系，节点之间通过边连接，有input和output节点</li>
+<li>workflow是通过yaml格式存储的，首先是解析成对象格式，然后构建节点，把他们之间通过边连接起来，构建好workflow之后通过一次扫描来看是不是有环存在，存在的话就验证失败。</li>
+<li>参考langgraph实现了基于状态机的中央状态管理，最重要的是多agent架构，结合workflow具有可控性的特点，就是一个任务比如说一个我定一个日程是帮我整理文件，我可以让大模型直接帮我做，但是我并不确定这个他做的过程是怎么样的，是不是符合要求，以及他下一次做是不是还是同样的路径，是否可以量化而不是每次都靠玄学。有一个workflow做兜底至少能限制住大模型跑偏。</li>
+<li>分层架构，这样可以让ai先专注于写工作流，因为工作流是比较关键的，然后再去写node，node其实只是实现，并且我们框架还可以在连接节点，处理节点间输入输出这块再做优化。比如说把输入输出都是流式的节点串成一个pipeline这样。</li>
+<li>我们设计的是工作流主要是agent之间的协作，上下文管理（这个好像变成了state）</li>
+<li>节点就是提示词的细化，通过单元测试提高命中率。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性维度</th>
+<th><strong>LangGraph 的设计理念</strong></th>
+<th><strong>Claude Code 的真实架构印证</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>核心架构</strong></td>
+<td><strong>图式结构</strong>：通过节点（处理单元）和条件边（动态路由）构建灵活的、非线性的工作流，支持循环和分支 <a target="_blank" rel="noopener" href="https://cloud.tencent.cn/developer/article/2588398?policyId=1004"></a>。</td>
+<td><strong>多Agent并行协作</strong>：采用主Agent领导多个<strong>Subagent</strong>的架构。在执行任务时，它会<strong>并行启动多个Subagent</strong>（如文件搜索、规划专家），分别探索代码库的不同部分，最后汇总结果 <a target="_blank" rel="noopener" href="https://zhipu-ai.feishu.cn/wiki/EsNJwALEMiIcClkDkXhcvmufnBb?renamingWikiNode=false"></a><a target="_blank" rel="noopener" href="https://blog.lmcache.ai/zh/2025/12/31/%e6%8f%ad%e7%a7%98-claude-code-%e5%ba%95%e5%b1%82%e7%9a%84%e4%b8%8a%e4%b8%8b%e6%96%87%e5%b7%a5%e7%a8%8b%e4%b8%8e%e5%a4%8d%e7%94%a8%e6%a8%a1%e5%bc%8f/"></a><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1716366"></a>。这正是LangGraph所擅长的复杂图式路由。</td>
+</tr>
+<tr>
+<td><strong>状态管理</strong></td>
+<td><strong>中央状态机</strong>：一个全局的<code>State</code>对象在节点间传递和更新，确保上下文连贯，是实现“记忆”和“时间旅行”的基础 <a target="_blank" rel="noopener" href="https://cloud.tencent.cn/developer/article/2588398?policyId=1004"></a>。</td>
+<td><strong>智能上下文压缩与缓存</strong>：Claude Code 通过 <code>Claude.md</code> 文件管理项目级的长效记忆 <a target="_blank" rel="noopener" href="https://blog.langchain.com/how-to-turn-claude-code-into-a-domain-specific-coding-agent/?utm_source=www.bigdatanewsweekly.com&utm_medium=referral&utm_campaign=alibaba-qwen-s-open-source-omni-model"></a><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1716366"></a>。更厉害的是，其底层实现了高达 <strong>92% 的提示词前缀复用率</strong><a target="_blank" rel="noopener" href="https://blog.lmcache.ai/zh/2025/12/31/%e6%8f%ad%e7%a7%98-claude-code-%e5%ba%95%e5%b1%82%e7%9a%84%e4%b8%8a%e4%b8%8b%e6%96%87%e5%b7%a5%e7%a8%8b%e4%b8%8e%e5%a4%8d%e7%94%a8%e6%a8%a1%e5%bc%8f/"></a>，本质上是在协议层对“中央状态”进行了极致的工程优化，以实现长对话的连贯和低成本。</td>
+</tr>
+<tr>
+<td><strong>工具系统</strong></td>
+<td><strong>工具即节点</strong>：将外部工具（如搜索引擎、计算器）作为图中的一个节点，由模型动态决策是否调用。</td>
+<td><strong>MCP 协议</strong>：通过 <strong>MCP（模型上下文协议）服务器</strong>，将文件系统、Shell命令、GitHub、甚至数据库等外部世界“工具化”，供Agent按需调用 <a target="_blank" rel="noopener" href="https://zhipu-ai.feishu.cn/wiki/EsNJwALEMiIcClkDkXhcvmufnBb?renamingWikiNode=false"></a><a target="_blank" rel="noopener" href="https://cloud.tencent.com.cn/developer/article/2619295?from=15425&frompage=seopage"></a><a target="_blank" rel="noopener" href="https://cloud.tencent.cn/developer/article/2588398?policyId=1004"></a>。这种即插即用的工具生态，正是LangGraph“工具即节点”思想的规模化实现。</td>
+</tr>
+<tr>
+<td><strong>流程控制</strong></td>
+<td><strong>动态决策</strong>：通过条件边让模型根据当前状态决定下一步走向（是调用工具还是直接回答）<a target="_blank" rel="noopener" href="https://cloud.tencent.cn/developer/article/2588398?policyId=1004"></a>。</td>
+<td><strong>ReAct 循环与规划模式</strong>：从追踪日志可以看到，其 Subagent 内部普遍采用 <strong>ReAct（思考-行动-观察）循环</strong> <a target="_blank" rel="noopener" href="https://blog.lmcache.ai/zh/2025/12/31/%e6%8f%ad%e7%a7%98-claude-code-%e5%ba%95%e5%b1%82%e7%9a%84%e4%b8%8a%e4%b8%8b%e6%96%87%e5%b7%a5%e7%a8%8b%e4%b8%8e%e5%a4%8d%e7%94%a8%e6%a8%a1%e5%bc%8f/"></a>。同时提供了<strong>Plan模式</strong>，让Agent在执行前先输出计划，经用户确认后再动手，实现了高级的人机协作控制流 <a target="_blank" rel="noopener" href="https://awtmt.com/articles/3754478"></a><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1716366"></a>。</td>
+</tr>
+<tr>
+<td><strong>工程特性</strong></td>
+<td><strong>生产就绪</strong>：内置节点缓存、检查点、断点续跑、人工介入等，为复杂应用的稳定性和可调试性而生。</td>
+<td><strong>企业级能力</strong>：拥有精细的<strong>权限管理</strong>（如Bash命令的白名单&#x2F;黑名单）、<strong>沙箱模式</strong>、<strong>会话持久化与恢复</strong>（<code>--resume</code>参数）、以及详尽的<strong>流式输出和终端UI渲染</strong><a target="_blank" rel="noopener" href="https://cloud.tencent.com.cn/developer/article/2619295?from=15425&frompage=seopage"></a><a target="_blank" rel="noopener" href="https://awtmt.com/articles/3754478"></a><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1716366"></a>。这些都是LangGraph生产级理念在工业界的最高标准体现。</td>
+</tr>
+<tr>
+<td>如果阶段之间分的好的话，前面一个阶段收敛了，后面的阶段就可以只需要很少的之前的上下文信息，即可完成任务。这也是为什么工作流可以有比较好的效果。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>节点是比较个性化的<br>服务是大家都会用到的<br>所以一般优先看是不是有服务能满足这个复杂功能，比如一个语音转文本的服务。</p>
 <div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/03/09/Course/%E4%BC%A0%E5%AA%92%E7%A0%94%E7%A9%B6/">← 下一篇 传媒研究</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/03/07/Project/Ragent/">Ragent 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/bgm.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/faction/amiya.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Nervld Island™</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/RuspeciaNervld"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:WindNegev@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/245123239"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/warfarin-40"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
